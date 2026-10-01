@@ -53,9 +53,16 @@ src/
   - Respects `prefers-reduced-motion`.
 - **Shareable shop filters.** `/shop?kind=jam` deep-links to a tab, and the footer uses it.
 
+## Deployment
+
+Live at **https://ratherblue.github.io/strawberries/**.
+
+- Every push to `master` runs [.github/workflows/deploy.yml](.github/workflows/deploy.yml). It checks formatting, builds, and publishes `dist/` to GitHub Pages.
+- Production builds use the `/strawberries/` base path (see `vite.config.ts`); the router reads it from Vite, so links follow automatically.
+- Pages has no single-page-app fallback, so the build also writes `404.html` as a copy of `index.html`. Deep links like `/strawberries/shop` then load the app, which routes as normal.
+
 ## Notes
 
 - All photography is a striped placeholder (`site/Photo.tsx`), and the farm's address, phone and hours are made up.
 - Checkout is a demo: no payment is taken, and the page says so.
 - Fonts: Libre Caslon Text, Figtree and DM Mono, loaded from Google Fonts.
-- Deploying under a sub-path (e.g. GitHub Pages)? Set `base` in `vite.config.ts`; the router picks it up automatically. Static hosts need an SPA fallback to `index.html`.
