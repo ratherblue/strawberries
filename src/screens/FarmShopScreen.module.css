@@ -5,7 +5,7 @@
 .cards { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; margin-top: 40px; }
 .anchor { scroll-margin-top: 92px; }
 .hours { margin: 18px 0 0; }
-.hourRow { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px dashed var(--border-soft); }
+.hour-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px dashed var(--border-soft); }
 .today { font-weight: 700; }
 .day { display: flex; align-items: center; gap: 10px; }
 .time { margin: 0; font-family: var(--font-mono); color: var(--ink-900); }
@@ -15,12 +15,12 @@
 .address { font-style: normal; line-height: 1.6; }
 .parking { margin: 12px 0 0; font-size: 15px; color: var(--ink-700); }
 .shelves { margin-top: 56px; }
-.shelvesHead { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 24px; }
+.shelves-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 24px; }
 .shelf { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
-.itemHead { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; }
-.itemName { font: 400 19px/1.2 var(--font-display); color: var(--plum-700); }
-.itemPrice { font: 500 13px var(--font-mono); white-space: nowrap; }
-.itemDesc { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+.item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; }
+.item-name { font: 400 19px/1.2 var(--font-display); color: var(--plum-700); }
+.item-price { font: 500 13px var(--font-mono); white-space: nowrap; }
+.item-desc { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
 
 @media (max-width: 860px) {
   .intro { grid-template-columns: 1fr; gap: 24px; }
@@ -31,7 +31,7 @@
 @media (max-width: 640px) {
   .lead { font-size: 18px; }
   .photo { --photo-h: 240px !important; }
-  .shelvesHead { flex-direction: column; align-items: flex-start; }
+  .shelves-head { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 420px) {
   .shelf { grid-template-columns: 1fr; }

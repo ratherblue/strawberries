@@ -1,5 +1,5 @@
 .main { flex: 1; outline: none; }
-.toastHost {
+.toast-host {
   position: fixed;
   left: 50%;
   bottom: 24px;
@@ -9,6 +9,6 @@
   max-width: calc(100vw - 32px);
 }
 @media (max-width: 480px) {
-  .toastHost { bottom: 16px; width: calc(100vw - 32px); }
-  .toastHost :global(.sb-toast) { min-width: 0; max-width: none; }
+  .toast-host { bottom: 16px; width: calc(100vw - 32px); }
+  .toast-host :global(.sb-toast) { min-width: 0; max-width: none; }
 }

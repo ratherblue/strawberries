@@ -72,7 +72,7 @@ export function CartScreen() {
           </fieldset>
         </div>
 
-        <aside className={s.aside} aria-label="Order summary">
+        <aside aria-label="Order summary">
           <OrderSummary lines={lines} freq={frequency}>
             <Button variant="berry" size="lg" block iconRight="arrow-right" to="/checkout">Checkout</Button>
             <div className={s.keep}><Link to="/shop">Keep browsing</Link></div>

@@ -54,29 +54,29 @@
   pointer-events: none;
   animation: sb-pop var(--dur-slow) var(--ease-pop);
 }
-.menuBtn { display: none; }
-.mobileNav { display: none; }
+.menu-btn { display: none; }
+.mobile-nav { display: none; }
 
 @media (max-width: 960px) {
   .nav { display: none; }
-  .menuBtn { display: inline-grid; }
-  .mobileNav[hidden] { display: none; }
-  .mobileOpen {
+  .menu-btn { display: inline-grid; }
+  .mobile-nav[hidden] { display: none; }
+  .mobile-open {
     display: flex;
     flex-direction: column;
     padding: 8px var(--gutter) 20px;
     border-top: 1.5px solid var(--border-soft);
     animation: sb-fade var(--dur-base) var(--ease-out);
   }
-  .mobileLink {
+  .mobile-link {
     padding: 14px 0;
     font: 400 24px/1.1 var(--font-display);
     color: var(--plum-700);
     text-decoration: none;
     border-bottom: 1px dashed var(--border-soft);
   }
-  .mobileLink:last-child { border-bottom: 0; }
-  .mobileActive { color: var(--berry-600); }
+  .mobile-link:last-child { border-bottom: 0; }
+  .mobile-active { color: var(--berry-600); }
 }
 @media (max-width: 420px) {
   .bar { gap: 12px; }

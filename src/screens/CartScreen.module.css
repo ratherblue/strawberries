@@ -1,7 +1,7 @@
 .empty { max-width: var(--container-max); margin: 0 auto; padding: 96px var(--gutter); text-align: center; }
-.emptyBerry { margin: 0 auto; }
-.emptyTitle { font: 400 40px/1.1 var(--font-display); margin: 20px 0 12px; }
-.emptyCopy { color: var(--ink-700); margin: 0 0 28px; }
+.empty-berry { margin: 0 auto; }
+.empty-title { font: 400 40px/1.1 var(--font-display); margin: 20px 0 12px; }
+.empty-copy { color: var(--ink-700); margin: 0 0 28px; }
 
 .title { margin-bottom: 32px; }
 .layout { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 40px; align-items: start; }
@@ -30,7 +30,7 @@
 .remove:focus-visible { outline: 1.5px solid var(--plum-400); outline-offset: 2px; }
 .stepper { display: flex; align-items: center; gap: 10px; }
 .qty { font: 500 16px var(--font-mono); min-width: 20px; text-align: center; }
-.lineTotal { font: 500 16px var(--font-mono); min-width: 80px; text-align: right; }
+.line-total { font: 500 16px var(--font-mono); min-width: 80px; text-align: right; }
 
 .freq { border: 0; padding: 0; margin: 32px 0 0; min-width: 0; }
 .freq legend { padding: 0; }
@@ -44,9 +44,9 @@
   transition: background var(--dur-fast), border-color var(--dur-fast);
 }
 .option:hover { border-color: var(--border-strong); }
-.optionOn, .optionOn:hover { background: var(--plum-50); border-color: var(--plum-400); }
-.optionHead { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-.optionCopy { font-size: 14px; color: var(--text-muted); margin: 6px 0 0 30px; }
+.option-on, .option-on:hover { background: var(--plum-50); border-color: var(--plum-400); }
+.option-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.option-copy { font-size: 14px; color: var(--text-muted); margin: 6px 0 0 30px; }
 .keep { text-align: center; margin-top: 14px; font-size: 14px; }
 
 @media (max-width: 960px) {
@@ -62,6 +62,6 @@
   .thumb { grid-area: thumb; --photo-h: 72px !important; align-self: start; }
   .info { grid-area: info; }
   .stepper { grid-area: stepper; }
-  .lineTotal { grid-area: total; min-width: 0; align-self: start; }
+  .line-total { grid-area: total; min-width: 0; align-self: start; }
   .options { grid-template-columns: 1fr; }
 }

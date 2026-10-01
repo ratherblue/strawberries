@@ -14,7 +14,7 @@ function useRouteScroll() {
     if (hash) {
       const el = document.getElementById(decodeURIComponent(hash.slice(1)));
       if (el) {
-        el.scrollIntoView({ block: 'start' });
+        el.scrollIntoView({ block: 'start', behavior: 'instant' });
         return;
       }
     }
