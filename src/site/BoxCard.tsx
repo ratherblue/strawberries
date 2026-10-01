@@ -4,7 +4,7 @@ import { money } from '../lib/money';
 import { useStore } from '../state/store';
 import { cx } from '../lib/cx';
 import { Photo } from './Photo';
-import s from './BoxCard.module.css';
+import s from './BoxCard.module.scss';
 
 /** Clicking anywhere on the card adds it to the basket; the heart only toggles the favourite. */
 export function BoxCard({ box }: { box: Product }) {

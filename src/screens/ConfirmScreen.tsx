@@ -3,7 +3,7 @@ import { Button, Card, Strawberry } from '../components';
 import { useStore } from '../state/store';
 import { formatLongDate } from '../lib/dates';
 import { usePageTitle } from '../lib/usePageTitle';
-import s from './ConfirmScreen.module.css';
+import s from './ConfirmScreen.module.scss';
 
 export function ConfirmScreen() {
   const { id } = useParams();

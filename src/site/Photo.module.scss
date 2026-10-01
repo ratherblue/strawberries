@@ -1,3 +1,5 @@
+@use '../styles/functions' as *;
+
 .photo {
   position: relative;
   height: var(--photo-h);
@@ -10,7 +12,7 @@
 .leaf { background: var(--pattern-diagonal-leaf), var(--leaf-50); }
 .plum { background: var(--pattern-diagonal-plum), var(--plum-50); }
 .label {
-  font: 500 11px/1 var(--font-mono);
+  font: 500 #{rem(11px)}/1 var(--font-mono);
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--ink-500);

@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { Card } from '../components';
 import { FREE_DELIVERY_AT, money, totals, type Frequency, type Line } from '../lib/money';
 import { cx } from '../lib/cx';
-import s from './OrderSummary.module.css';
+import s from './OrderSummary.module.scss';
 
 interface Props {
   lines: Line[];

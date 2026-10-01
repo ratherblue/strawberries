@@ -1,0 +1,55 @@
+@use '../functions' as *;
+
+// <button class="sb-tag is-clickable is-selected">
+.sb-tag {
+  appearance: none;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--border-soft);
+  background: var(--surface-card);
+  font: 500 #{rem(14px)}/1 var(--font-body);
+  color: var(--text-secondary);
+  transition:
+    background var(--dur-fast),
+    border-color var(--dur-fast),
+    color var(--dur-fast),
+    transform var(--dur-base) var(--ease-pop);
+
+  &.is-clickable {
+    cursor: pointer;
+    &:hover { border-color: var(--plum-200); background: var(--plum-50); }
+    &:active { transform: scale(.96); }
+  }
+
+  &:focus-visible { outline: none; box-shadow: var(--ring); }
+
+  &.is-selected,
+  &.is-selected:hover {
+    background: var(--plum-600);
+    border-color: var(--plum-600);
+    color: #fff;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .45;
+  }
+}
+
+.sb-tag-x {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  margin-right: -7px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover { background: rgba(42, 31, 41, .08); }
+  .sb-tag.is-selected &:hover { background: rgba(255, 255, 255, .18); }
+}

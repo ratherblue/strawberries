@@ -1,0 +1,76 @@
+// Element defaults, pattern utilities and shared keyframes.
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-page);
+  color: var(--text-body);
+  font: var(--type-body);
+}
+
+:where(h1, h2, h3) {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--text-heading);
+  letter-spacing: var(--tracking-display);
+  text-wrap: balance;
+  margin: 0;
+}
+:where(h1) { font: var(--type-h1); }
+:where(h2) { font: var(--type-h2); }
+:where(h3) { font: var(--type-h3); }
+:where(h4) { font: var(--type-h4); color: var(--text-body); margin: 0; }
+
+:where(p) { text-wrap: pretty; }
+
+:where(a) {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--link-underline);
+  transition: color var(--dur-fast), text-decoration-color var(--dur-fast);
+
+  &:hover {
+    color: var(--link-hover);
+    text-decoration-color: currentColor;
+  }
+}
+
+:where(code, kbd) { font: var(--type-code); }
+
+::selection {
+  background: var(--berry-100);
+  color: var(--plum-800);
+}
+
+// Patterns: <div class="sb-pattern berry-gingham">
+.sb-pattern {
+  @each $tone in 'berry', 'leaf', 'plum' {
+    &.#{$tone} { background: var(--pattern-diagonal-#{$tone}); }
+    &.#{$tone}-candy { background: var(--pattern-candy-#{$tone}); }
+    &.#{$tone}-gingham { background: var(--pattern-gingham-#{$tone}); }
+    &.#{$tone}-plaid { background: var(--pattern-plaid-#{$tone}); }
+  }
+}
+
+@keyframes sb-pop {
+  from { opacity: 0; transform: translateY(8px) scale(.96); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes sb-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+  }
+}

@@ -1,0 +1,82 @@
+:root {
+  /* Berry — the fruit. Decoration, highlights, badges. */
+  --berry-50: #FFF1F2;
+  --berry-100: #FFE0E3;
+  --berry-200: #FBC4CA;
+  --berry-300: #F79AA4;
+  --berry-400: #F06B78;
+  --berry-500: #E8434F;
+  --berry-600: #CC2F3C;
+  --berry-700: #A5222F;
+  /* Leaf — forest green. Links, "on" states, success. */
+  --leaf-50: #F0F7EE;
+  --leaf-100: #DCEDD6;
+  --leaf-200: #BADBB0;
+  --leaf-400: #5FA66A;
+  --leaf-500: #3E8E4F;
+  --leaf-600: #2F6B3A;
+  --leaf-700: #24532D;
+  --leaf-800: #1B3F22;
+  /* Plum — dark accent (#694165). Primary actions, headings. */
+  --plum-50: #F7F0F6;
+  --plum-100: #EEDFEC;
+  --plum-200: #DCC2D8;
+  --plum-400: #9A6A95;
+  --plum-500: #7F527A;
+  --plum-600: #694165;
+  --plum-700: #733254;
+  --plum-800: #3D243B;
+  /* Cream + ink neutrals (warm, plum-tinted) */
+  --cream-50: #FFFCF8;
+  --cream-100: #FFF7EF;
+  --cream-200: #FBEEE2;
+  --cream-300: #F3E2D2;
+  --ink-900: #2A1F29;
+  --ink-700: #4A3D48;
+  --ink-500: #76687A;
+  --ink-400: #9B8E98;
+  --ink-300: #C9BEC6;
+  --ink-200: #E9E0E4;
+  /* Sprinkles */
+  --seed-300: #FFE9A8;
+  --sun-400: #F6C453;
+  --sun-50: #FFF4D6;
+  --sun-700: #80560A;
+  --sky-50: #E8F4F8;
+  --sky-700: #2F6F86;
+
+  /* Semantic */
+  --bg-page: var(--cream-50);
+  --surface-card: #FFFFFF;
+  --surface-sunken: var(--cream-100);
+  --surface-muted: var(--cream-200);
+  --surface-tint: var(--berry-50);
+  --surface-inverse: var(--plum-700);
+  --text-body: var(--ink-900);
+  --text-secondary: var(--ink-700);
+  --text-muted: var(--ink-500);
+  --text-subtle: var(--ink-400);
+  --text-heading: var(--plum-700);
+  --text-eyebrow: var(--berry-700);
+  --text-on-accent: #FFFFFF;
+  --link: var(--leaf-600);
+  --link-hover: var(--leaf-800);
+  --link-underline: var(--leaf-200);
+  --accent: var(--plum-600);
+  --accent-hover: var(--plum-700);
+  --accent-press: var(--plum-800);
+  --accent-soft: var(--plum-50);
+  --berry: var(--berry-500);
+  --berry-strong: var(--berry-600);
+  --border-soft: var(--ink-200);
+  --border-strong: var(--ink-300);
+  --border-accent: var(--plum-400);
+  --success: var(--leaf-600);
+  --success-soft: var(--leaf-50);
+  --warning: var(--sun-700);
+  --warning-soft: var(--sun-50);
+  --danger: var(--berry-700);
+  --danger-soft: var(--berry-50);
+  --info: var(--sky-700);
+  --info-soft: var(--sky-50);
+}

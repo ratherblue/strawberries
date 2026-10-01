@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Strawberry, Stripes } from '../components';
-import s from './Footer.module.css';
+import s from './Footer.module.scss';
 
 const COLUMNS = [
   { heading: 'Shop', links: [['Boxes', '/shop?kind=box'], ['Jam', '/shop?kind=jam'], ['Gifts', '/shop?kind=gift'], ['Subscriptions', '/basket']] },

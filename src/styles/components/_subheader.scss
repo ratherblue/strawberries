@@ -1,0 +1,33 @@
+@use '../functions' as *;
+
+// Strawberry-led subheading: <h2 class="sb-subheader heading lg">
+.sb-subheader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: var(--text-heading);
+
+  &.heading {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: var(--tracking-display);
+
+    &.sm { font-size: rem(18px); }
+    &.md { font-size: rem(24px); }
+    &.lg { font-size: rem(32px); gap: 12px; }
+  }
+
+  &.eyebrow {
+    gap: 8px;
+    font: var(--type-eyebrow);
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--text-eyebrow);
+  }
+
+  // The berry wiggles on hover.
+  svg { transition: transform var(--dur-slow) var(--ease-pop); }
+  &:hover svg { transform: rotate(10deg) scale(1.08) !important; }
+}

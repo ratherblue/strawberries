@@ -1,7 +1,7 @@
 import type { CSSProperties, ReactNode } from 'react';
 import type { Tone } from '../data/products';
 import { cx } from '../lib/cx';
-import s from './Photo.module.css';
+import s from './Photo.module.scss';
 
 interface PhotoProps {
   /** What the real photo will show — printed on the placeholder */

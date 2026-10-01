@@ -4,7 +4,7 @@ import { PRODUCTS } from '../data/products';
 import { BoxCard } from '../site/BoxCard';
 import { Photo } from '../site/Photo';
 import { usePageTitle } from '../lib/usePageTitle';
-import s from './HomeScreen.module.css';
+import s from './HomeScreen.module.scss';
 
 const STEPS = [
   ['01', 'We pick', 'Every box is picked the morning it ships. Never cold-stored.'],

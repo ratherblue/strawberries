@@ -1,6 +1,8 @@
+@use '../styles/functions' as *;
+
 .intro { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; align-items: end; margin: 14px 0 40px; }
 .title { margin: 0 0 20px; }
-.lead { font: 400 20px/1.6 var(--font-body); color: var(--ink-700); margin: 0; max-width: 560px; }
+.lead { font: 400 #{rem(20px)}/1.6 var(--font-body); color: var(--ink-700); margin: 0; max-width: 560px; }
 .call { display: flex; gap: 10px; justify-content: flex-end; }
 .cards { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; margin-top: 40px; }
 .anchor { scroll-margin-top: 92px; }
@@ -10,17 +12,17 @@
 .day { display: flex; align-items: center; gap: 10px; }
 .time { margin: 0; font-family: var(--font-mono); color: var(--ink-900); }
 .closed { color: var(--text-muted); }
-.small { margin: 16px 0 0; font-size: 14px; color: var(--text-muted); }
+.small { margin: 16px 0 0; font-size: rem(14px); color: var(--text-muted); }
 .map { margin: 18px 0 16px; }
 .address { font-style: normal; line-height: 1.6; }
-.parking { margin: 12px 0 0; font-size: 15px; color: var(--ink-700); }
+.parking { margin: 12px 0 0; font-size: rem(15px); color: var(--ink-700); }
 .shelves { margin-top: 56px; }
 .shelves-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 24px; }
 .shelf { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
 .item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 12px; }
-.item-name { font: 400 19px/1.2 var(--font-display); color: var(--plum-700); }
-.item-price { font: 500 13px var(--font-mono); white-space: nowrap; }
-.item-desc { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+.item-name { font: 400 #{rem(19px)}/1.2 var(--font-display); color: var(--plum-700); }
+.item-price { font: 500 rem(13px) var(--font-mono); white-space: nowrap; }
+.item-desc { font-size: rem(14px); color: var(--text-muted); margin-top: 4px; }
 
 @media (max-width: 860px) {
   .intro { grid-template-columns: 1fr; gap: 24px; }
@@ -29,7 +31,7 @@
   .shelf { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
-  .lead { font-size: 18px; }
+  .lead { font-size: rem(18px); }
   .photo { --photo-h: 240px !important; }
   .shelves-head { flex-direction: column; align-items: flex-start; }
 }

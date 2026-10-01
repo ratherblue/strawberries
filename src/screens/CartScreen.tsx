@@ -6,7 +6,7 @@ import { OrderSummary } from '../site/OrderSummary';
 import { Photo } from '../site/Photo';
 import { usePageTitle } from '../lib/usePageTitle';
 import { cx } from '../lib/cx';
-import s from './CartScreen.module.css';
+import s from './CartScreen.module.scss';
 
 const FREQS: Array<[Frequency, string, string]> = [
   ['once', 'Just this once', 'Delivered this week, no strings.'],

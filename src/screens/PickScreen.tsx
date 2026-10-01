@@ -4,7 +4,7 @@ import { Badge, Button, Card, Checkbox, Input, Select, Subheader, Tag } from '..
 import { Photo } from '../site/Photo';
 import { formatLongDate, isSaturday, nextSaturday, toISODate } from '../lib/dates';
 import { usePageTitle } from '../lib/usePageTitle';
-import s from './PickScreen.module.css';
+import s from './PickScreen.module.scss';
 
 const SLOTS = ['9:00', '10:30', '12:00', '1:30', '3:00'];
 const FULL = ['12:00'];

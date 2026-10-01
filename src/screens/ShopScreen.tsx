@@ -4,7 +4,7 @@ import { Subheader, Tabs, Tag } from '../components';
 import { PRODUCTS, type ProductKind } from '../data/products';
 import { BoxCard } from '../site/BoxCard';
 import { usePageTitle } from '../lib/usePageTitle';
-import s from './ShopScreen.module.css';
+import s from './ShopScreen.module.scss';
 
 type KindFilter = 'all' | ProductKind;
 const KINDS: Array<{ id: KindFilter; label: string }> = [

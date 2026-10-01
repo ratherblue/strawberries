@@ -1,3 +1,5 @@
+@use '../styles/functions' as *;
+
 .wrap { max-width: var(--container-max); margin: 0 auto; padding: 80px var(--gutter) 96px; text-align: center; }
 .berry { margin: 0 auto; animation: wiggle 900ms var(--ease-pop) both; }
 @keyframes wiggle {
@@ -5,13 +7,13 @@
   50% { transform: rotate(8deg) scale(1.08); opacity: 1; }
   100% { transform: rotate(-12deg) scale(1); }
 }
-.title { font: 400 48px/1.1 var(--font-display); margin: 20px 0 12px; }
-.copy { font: 400 18px/1.55 var(--font-body); color: var(--ink-700); margin: 0 auto 32px; max-width: 560px; }
+.title { font: 400 #{rem(48px)}/1.1 var(--font-display); margin: 20px 0 12px; }
+.copy { font: 400 #{rem(18px)}/1.55 var(--font-body); color: var(--ink-700); margin: 0 auto 32px; max-width: 560px; }
 .card { text-align: left; margin: 0 auto 32px; max-width: 560px; }
-.details { display: grid; grid-template-columns: auto 1fr; gap: 8px 20px; font-size: 15px; margin: 0; }
-.details dt { font: 500 12px/22px var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--berry-700); }
+.details { display: grid; grid-template-columns: auto 1fr; gap: 8px 20px; font-size: rem(15px); margin: 0; }
+.details dt { font: 500 #{rem(12px)}/#{rem(22px)} var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--berry-700); }
 .details dd { margin: 0; }
 @media (max-width: 640px) {
   .wrap { padding: 56px var(--gutter) 72px; }
-  .title { font-size: 36px; }
+  .title { font-size: rem(36px); }
 }

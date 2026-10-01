@@ -4,7 +4,7 @@ import type { Tone } from '../data/products';
 import { Photo } from '../site/Photo';
 import { usePageTitle } from '../lib/usePageTitle';
 import { cx } from '../lib/cx';
-import s from './FarmShopScreen.module.css';
+import s from './FarmShopScreen.module.scss';
 
 const HOURS = [['Monday', 'Closed'], ['Tue – Fri', '10am – 5pm'], ['Saturday', '8am – 5pm'], ['Sunday', '10am – 3pm']] as const;
 /** Placeholder: highlight a fixed row until real opening-hours logic exists. */

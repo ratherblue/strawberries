@@ -1,18 +1,20 @@
-.title { font: 400 22px/1.2 var(--font-display); margin: 0 0 16px; }
+@use '../styles/functions' as *;
+
+.title { font: 400 #{rem(22px)}/1.2 var(--font-display); margin: 0 0 16px; }
 .items {
   list-style: none; margin: 0 0 14px; padding: 0 0 14px;
   display: flex; flex-direction: column; gap: 8px;
   border-bottom: 1px dashed var(--border-soft);
-  font-size: 14px;
+  font-size: rem(14px);
 }
 .items li { display: flex; justify-content: space-between; gap: 12px; }
 .rows { display: flex; flex-direction: column; gap: 10px; margin: 0; }
-.row { display: flex; justify-content: space-between; font: 400 15px var(--font-body); color: var(--ink-700); }
+.row { display: flex; justify-content: space-between; font: 400 rem(15px) var(--font-body); color: var(--ink-700); }
 .row dt, .row dd { margin: 0; }
 .row dd, .row > span:last-child { font-family: var(--font-mono); }
 .saving { color: var(--leaf-600); }
-.nudge { margin: 14px 0 0; padding: 10px 12px; background: var(--leaf-50); font-size: 13px; color: var(--leaf-700); }
+.nudge { margin: 14px 0 0; padding: 10px 12px; background: var(--leaf-50); font-size: rem(13px); color: var(--leaf-700); }
 .total-wrap { border-top: 1.5px solid var(--border-soft); margin: 16px 0; padding-top: 16px; }
-.total { font: 700 17px var(--font-body); color: var(--ink-900); }
+.total { font: 700 rem(17px) var(--font-body); color: var(--ink-900); }
 .total > span:last-child { font-weight: 500; }
-.note { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+.note { font-size: rem(13px); color: var(--text-muted); margin-top: 4px; }

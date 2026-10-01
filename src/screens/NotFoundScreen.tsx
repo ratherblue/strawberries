@@ -1,6 +1,6 @@
 import { Button, Strawberry } from '../components';
 import { usePageTitle } from '../lib/usePageTitle';
-import s from './ConfirmScreen.module.css';
+import s from './ConfirmScreen.module.scss';
 
 export function NotFoundScreen() {
   usePageTitle('Not found');

@@ -1,0 +1,47 @@
+// <button class="sb-iconbtn ghost sm">
+.sb-iconbtn {
+  appearance: none;
+  display: inline-grid;
+  place-items: center;
+  padding: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-soft);
+  background: var(--surface-card);
+  color: var(--plum-700);
+  cursor: pointer;
+  transition:
+    transform var(--dur-base) var(--ease-pop),
+    background var(--dur-fast),
+    border-color var(--dur-fast),
+    color var(--dur-fast);
+
+  &.sm { width: 32px; height: 32px; }
+  &.md { width: 40px; height: 40px; }
+  &.lg { width: 48px; height: 48px; }
+
+  // Must come before :hover so ghost buttons still get the berry hover.
+  &.ghost { border-color: transparent; background: transparent; }
+
+  &:hover {
+    background: var(--berry-50);
+    border-color: var(--berry-200);
+    color: var(--berry-700);
+    transform: rotate(-8deg);
+  }
+  &:active { transform: scale(.92); }
+  &:focus-visible { outline: none; box-shadow: var(--ring); }
+
+  &.solid {
+    background: var(--plum-600);
+    border-color: var(--plum-600);
+    color: #fff;
+    &:hover { background: var(--plum-700); border-color: var(--plum-700); color: #fff; }
+  }
+
+  &:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+    transform: none;
+    &:hover { transform: none; }
+  }
+}

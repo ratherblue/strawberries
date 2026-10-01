@@ -1,0 +1,9 @@
+// Decorative band: <div class="sb-stripes candy sb-pattern berry-candy">
+.sb-stripes {
+  width: 100%;
+  border-radius: var(--radius-sm);
+
+  &.band { border-radius: var(--radius-md); }
+  &.rule,
+  &.candy { border-radius: var(--radius-pill); }
+}

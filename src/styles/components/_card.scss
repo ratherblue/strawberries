@@ -1,0 +1,41 @@
+// <div class="sb-card tinted interactive">
+.sb-card {
+  background: var(--surface-card);
+  border: 1.5px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  color: var(--text-body);
+
+  &.outline { box-shadow: none; }
+  &.tinted { background: var(--berry-50); border-color: var(--berry-100); box-shadow: none; }
+  &.leaf { background: var(--leaf-50); border-color: var(--leaf-100); box-shadow: none; }
+
+  // Hover lifts the card up-left to reveal the pink "sticker" shadow.
+  &.interactive {
+    cursor: pointer;
+    transition: transform var(--dur-base) var(--ease-pop), box-shadow var(--dur-base) var(--ease-out);
+
+    &:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-sticker);
+
+      // Buttons inside take their hover state from the card.
+      .sb-btn.primary { background: var(--accent-hover); }
+      .sb-btn.berry { background: var(--berry-700); }
+      .sb-btn.secondary { background: var(--plum-50); border-color: var(--plum-400); }
+      .sb-btn.ghost { background: var(--plum-50); }
+    }
+
+    &:focus-visible {
+      outline: none;
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-sticker), var(--ring);
+    }
+  }
+}
+
+.sb-card-stripes {
+  height: 14px;
+  border-bottom: 1.5px solid var(--border-soft);
+}

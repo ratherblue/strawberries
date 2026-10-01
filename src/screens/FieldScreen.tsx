@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Card, Subheader } from '../components';
 import { Photo } from '../site/Photo';
 import { usePageTitle } from '../lib/usePageTitle';
-import s from './FieldScreen.module.css';
+import s from './FieldScreen.module.scss';
 
 export function FieldScreen() {
   usePageTitle('Our field');

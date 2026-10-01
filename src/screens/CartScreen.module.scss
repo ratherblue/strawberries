@@ -1,6 +1,8 @@
+@use '../styles/functions' as *;
+
 .empty { max-width: var(--container-max); margin: 0 auto; padding: 96px var(--gutter); text-align: center; }
 .empty-berry { margin: 0 auto; }
-.empty-title { font: 400 40px/1.1 var(--font-display); margin: 20px 0 12px; }
+.empty-title { font: 400 #{rem(40px)}/1.1 var(--font-display); margin: 20px 0 12px; }
 .empty-copy { color: var(--ink-700); margin: 0 0 28px; }
 
 .title { margin-bottom: 32px; }
@@ -14,11 +16,11 @@
   padding: 18px 0;
   border-bottom: 1.5px solid var(--border-soft);
 }
-.name { font: 400 20px/1.2 var(--font-display); color: var(--plum-700); }
-.meta { font: 500 12px var(--font-mono); color: var(--text-muted); margin: 4px 0 10px; letter-spacing: .04em; }
+.name { font: 400 #{rem(20px)}/1.2 var(--font-display); color: var(--plum-700); }
+.meta { font: 500 rem(12px) var(--font-mono); color: var(--text-muted); margin: 4px 0 10px; letter-spacing: .04em; }
 .remove {
   appearance: none; background: none; border: 0; padding: 0; cursor: pointer;
-  font: 400 14px var(--font-body);
+  font: 400 rem(14px) var(--font-body);
   color: var(--link);
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
@@ -29,8 +31,8 @@
 .remove:hover { color: var(--link-hover); text-decoration-color: currentColor; }
 .remove:focus-visible { outline: 1.5px solid var(--plum-400); outline-offset: 2px; }
 .stepper { display: flex; align-items: center; gap: 10px; }
-.qty { font: 500 16px var(--font-mono); min-width: 20px; text-align: center; }
-.line-total { font: 500 16px var(--font-mono); min-width: 80px; text-align: right; }
+.qty { font: 500 rem(16px) var(--font-mono); min-width: 20px; text-align: center; }
+.line-total { font: 500 rem(16px) var(--font-mono); min-width: 80px; text-align: right; }
 
 .freq { border: 0; padding: 0; margin: 32px 0 0; min-width: 0; }
 .freq legend { padding: 0; }
@@ -46,8 +48,8 @@
 .option:hover { border-color: var(--border-strong); }
 .option-on, .option-on:hover { background: var(--plum-50); border-color: var(--plum-400); }
 .option-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-.option-copy { font-size: 14px; color: var(--text-muted); margin: 6px 0 0 30px; }
-.keep { text-align: center; margin-top: 14px; font-size: 14px; }
+.option-copy { font-size: rem(14px); color: var(--text-muted); margin: 6px 0 0 30px; }
+.keep { text-align: center; margin-top: 14px; font-size: rem(14px); }
 
 @media (max-width: 960px) {
   .layout { grid-template-columns: 1fr; }

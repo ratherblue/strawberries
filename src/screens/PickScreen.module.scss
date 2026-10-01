@@ -1,17 +1,19 @@
+@use '../styles/functions' as *;
+
 .lead { max-width: 640px; margin-bottom: 36px; }
 .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin: 0 0 48px; }
 .fact { border-top: 2px solid var(--berry-500); padding-top: 14px; }
-.fact-title { font: 400 22px/1.2 var(--font-display); color: var(--plum-700); }
-.fact-body { font-size: 15px; color: var(--ink-700); margin: 6px 0 0; }
+.fact-title { font: 400 #{rem(22px)}/1.2 var(--font-display); color: var(--plum-700); }
+.fact-body { font-size: rem(15px); color: var(--ink-700); margin: 6px 0 0; }
 .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: start; }
 .form { display: flex; flex-direction: column; gap: 18px; margin-top: 20px; }
 .row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: start; }
 .slots { border: 0; padding: 0; margin: 0; min-width: 0; }
 .slots legend { padding: 0; margin-bottom: 6px; }
 .slot-list { display: flex; gap: 8px; flex-wrap: wrap; }
-.note { margin: 0; font-size: 13px; color: var(--text-muted); text-align: center; }
+.note { margin: 0; font-size: rem(13px); color: var(--text-muted); text-align: center; }
 .done { animation: sb-pop var(--dur-slow) var(--ease-pop); }
-.done-title { font: 400 32px/1.15 var(--font-display); margin: 14px 0 10px; outline: none; }
+.done-title { font: 400 #{rem(32px)}/1.15 var(--font-display); margin: 14px 0 10px; outline: none; }
 .done-copy { color: var(--ink-700); margin: 0 0 20px; }
 .done-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 

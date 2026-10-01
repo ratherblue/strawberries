@@ -4,7 +4,7 @@ import { Toast } from '../components';
 import { useStore } from '../state/store';
 import { Header } from './Header';
 import { Footer } from './Footer';
-import s from './Layout.module.css';
+import s from './Layout.module.scss';
 
 /** Scroll to top on navigation (or to #hash targets), and move focus for screen-reader users. */
 function useRouteScroll() {

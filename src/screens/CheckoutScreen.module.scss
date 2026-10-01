@@ -1,3 +1,5 @@
+@use '../styles/functions' as *;
+
 .title { margin-bottom: 24px; }
 .layout { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 40px; align-items: start; }
 .section { padding: 28px 0; border-top: 1.5px solid var(--border-soft); }
@@ -8,10 +10,10 @@
   display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
   padding: 10px 12px;
   background: var(--sun-50);
-  font-size: 13px; color: var(--sun-700);
+  font-size: rem(13px); color: var(--sun-700);
 }
 .aside { position: sticky; top: 92px; }
-.note { font-size: 13px; color: var(--text-muted); margin: 12px 0 0; text-align: center; }
+.note { font-size: rem(13px); color: var(--text-muted); margin: 12px 0 0; text-align: center; }
 
 @media (max-width: 960px) {
   .layout { grid-template-columns: 1fr; }

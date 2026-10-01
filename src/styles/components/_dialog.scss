@@ -1,0 +1,57 @@
+@use '../functions' as *;
+
+.sb-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: var(--overlay-scrim);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  animation: sb-fade var(--dur-base) var(--ease-out);
+
+  &.inline { position: absolute; }
+}
+
+.sb-dialog {
+  width: 100%;
+  background: var(--surface-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  animation: sb-pop var(--dur-slow) var(--ease-pop);
+}
+
+.sb-dialog-stripes { height: 12px; }
+
+.sb-dialog-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 20px 0 28px;
+}
+
+.sb-dialog-title {
+  margin: 4px 0 0;
+  font: 400 #{rem(26px)}/1.15 var(--font-display);
+  color: var(--text-heading);
+  letter-spacing: var(--tracking-display);
+}
+
+.sb-dialog-body {
+  padding: 10px 28px 24px;
+  font: 400 #{rem(15px)}/1.55 var(--font-body);
+  color: var(--text-secondary);
+}
+
+.sb-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 24px;
+  background: var(--surface-sunken);
+  border-top: 1.5px solid var(--border-soft);
+}

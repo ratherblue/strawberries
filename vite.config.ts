@@ -3,5 +3,8 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  css: { modules: { localsConvention: 'camelCaseOnly' } },
+  css: {
+    modules: { localsConvention: 'camelCaseOnly' },
+    preprocessorOptions: { scss: { api: 'modern-compiler' } },
+  },
 });

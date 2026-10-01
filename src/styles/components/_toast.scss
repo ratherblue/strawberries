@@ -1,0 +1,71 @@
+@use '../functions' as *;
+
+// <div class="sb-toast success">
+.sb-toast {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 280px;
+  max-width: 440px;
+  padding: 10px 10px 10px 12px;
+  border-radius: var(--radius-md);
+  background: var(--plum-700);
+  color: #fff;
+  box-shadow: var(--shadow-md);
+  font: 400 #{rem(14px)}/1.4 var(--font-body);
+  animation: sb-pop var(--dur-slow) var(--ease-pop);
+
+  &.success { background: var(--leaf-700); }
+  &.danger { background: var(--berry-700); }
+}
+
+.sb-toast-lead {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .14);
+}
+
+.sb-toast-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+
+  strong { font-weight: 700; }
+  span { opacity: .88; }
+}
+
+.sb-toast-action {
+  appearance: none;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  padding: 7px 9px;
+  border-radius: 8px;
+  font: 700 #{rem(14px)}/1 var(--font-body);
+  color: var(--seed-300);
+
+  &:hover { background: rgba(255, 255, 255, .1); }
+}
+
+.sb-toast-close {
+  appearance: none;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: #fff;
+  opacity: .7;
+
+  &:hover { opacity: 1; background: rgba(255, 255, 255, .12); }
+}

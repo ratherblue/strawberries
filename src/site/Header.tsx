@@ -4,7 +4,7 @@ import { IconButton } from '../components';
 import { useStore } from '../state/store';
 import { cx } from '../lib/cx';
 import { NAV } from './nav';
-import s from './Header.module.css';
+import s from './Header.module.scss';
 
 export function Header() {
   const { count } = useStore();
