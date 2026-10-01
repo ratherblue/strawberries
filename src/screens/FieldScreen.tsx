@@ -15,13 +15,7 @@ export function FieldScreen() {
         We grow Elsanta, Malling Centenary and a few rows of wild alpines we mostly eat ourselves.
         No sprays after flowering, and everything's picked by hand.
       </p>
-      <Photo
-        label="the field at golden hour"
-        tone="leaf"
-        height={340}
-        radius={26}
-        className={s.photo}
-      />
+      <Photo label="the field at golden hour" tone="leaf" radius={26} className={s.photo} />
       <div className={s.cards}>
         <Card variant="tinted" interactive keyboard={false} onClick={() => navigate('/pick')}>
           <Subheader size="sm" as="h2">

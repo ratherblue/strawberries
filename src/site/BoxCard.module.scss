@@ -1,13 +1,14 @@
-@use '../styles/functions' as *;
+@use '../styles/tools' as *;
 
 .card {
   display: flex;
   flex-direction: column;
-}
-.card > :global(.sb-card-body) {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+
+  > :global(.sb-card-body) {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
 }
 .media {
   position: relative;
@@ -22,19 +23,23 @@
   position: absolute;
   top: 18px;
   right: 18px;
+
+  :global(.sb-icon) {
+    transition: fill var(--dur-fast);
+  }
 }
-.heart :global(.sb-icon) {
-  transition: fill var(--dur-fast);
-}
-.faved,
-.faved:hover {
-  color: var(--berry-600);
-  background: var(--berry-50);
-  border-color: var(--berry-200);
-}
-.faved :global(.sb-icon) {
-  fill: currentColor;
-  animation: heart-pop var(--dur-slow) var(--ease-pop);
+.faved {
+  &,
+  &:hover {
+    color: var(--berry-600);
+    background: var(--berry-50);
+    border-color: var(--berry-200);
+  }
+
+  :global(.sb-icon) {
+    fill: currentColor;
+    animation: heart-pop var(--dur-slow) var(--ease-pop);
+  }
 }
 @keyframes heart-pop {
   from {

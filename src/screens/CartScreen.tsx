@@ -42,7 +42,7 @@ export function CartScreen() {
           <ul className={s.lines}>
             {lines.map((l) => (
               <li key={l.id} className={s.line}>
-                <Photo label="" tone={l.tone} height={96} radius={0} className={s.thumb} />
+                <Photo label="" tone={l.tone} radius={0} className={s.thumb} />
                 <div className={s.info}>
                   <div className={s.name}>{l.name}</div>
                   <div className={s.meta}>

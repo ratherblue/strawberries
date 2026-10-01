@@ -1,15 +1,19 @@
+@use '../styles/tools' as *;
+
 .title {
   margin: 14px 0 28px;
 }
 .tabs-wrap {
   overflow-x: auto;
   scrollbar-width: none;
-}
-.tabs-wrap::-webkit-scrollbar {
-  display: none;
-}
-.tabs-wrap :global(.sb-tabs) {
-  min-width: max-content;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  :global(.sb-tabs) {
+    min-width: max-content;
+  }
 }
 .filters {
   display: flex;
@@ -19,16 +23,13 @@
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 24px;
-}
-@media (max-width: 960px) {
-  .grid {
+
+  @include up(md) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-}
-@media (max-width: 640px) {
-  .grid {
-    grid-template-columns: 1fr;
+  @include up(xxl) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

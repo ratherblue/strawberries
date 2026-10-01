@@ -1,3 +1,5 @@
+@use '../tools' as *;
+
 :root {
   --space-0: 0;
   --space-1: 4px;
@@ -15,8 +17,12 @@
   --space-32: 128px;
   --container-max: 1120px;
   --container-narrow: 720px;
-  --gutter: 24px;
+  --gutter: 16px;
   --control-sm: 24px;
   --control-md: 30px;
   --control-lg: 36px; /* Button + Input heights — multiples of 6 */
+
+  @include up(lg) {
+    --gutter: 24px;
+  }
 }

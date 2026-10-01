@@ -1,10 +1,14 @@
-@use '../styles/functions' as *;
+@use '../styles/tools' as *;
 
 .empty {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 96px var(--gutter);
+  padding: 64px var(--gutter);
   text-align: center;
+
+  @include up(md) {
+    padding: 96px var(--gutter);
+  }
 }
 .empty-berry {
   margin: 0 auto;
@@ -23,9 +27,13 @@
 }
 .layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 360px;
+  grid-template-columns: 1fr;
   gap: 40px;
   align-items: start;
+
+  @include up(xxl) {
+    grid-template-columns: minmax(0, 1fr) 360px;
+  }
 }
 .lines {
   list-style: none;
@@ -35,11 +43,37 @@
 }
 .line {
   display: grid;
-  grid-template-columns: 96px minmax(0, 1fr) auto auto;
-  gap: 20px;
+  grid-template-columns: 72px minmax(0, 1fr) auto;
+  grid-template-areas: 'thumb info total' 'thumb stepper stepper';
+  gap: 8px 16px;
   align-items: center;
   padding: 18px 0;
   border-bottom: 1.5px solid var(--border-soft);
+
+  // One row on wider screens; the children drop their named areas below.
+  @include up(md) {
+    grid-template-columns: 96px minmax(0, 1fr) auto auto;
+    grid-template-areas: none;
+    gap: 20px;
+  }
+}
+.thumb {
+  grid-area: thumb;
+  --photo-h: 72px;
+  align-self: start;
+
+  @include up(md) {
+    grid-area: auto;
+    --photo-h: 96px;
+    align-self: auto;
+  }
+}
+.info {
+  grid-area: info;
+
+  @include up(md) {
+    grid-area: auto;
+  }
 }
 .name {
   font: 400 #{rem(20px)}/ 1.2 var(--font-display);
@@ -66,19 +100,25 @@
   transition:
     color var(--dur-fast),
     text-decoration-color var(--dur-fast);
-}
-.remove:hover {
-  color: var(--link-hover);
-  text-decoration-color: currentColor;
-}
-.remove:focus-visible {
-  outline: 1.5px solid var(--plum-400);
-  outline-offset: 2px;
+
+  &:hover {
+    color: var(--link-hover);
+    text-decoration-color: currentColor;
+  }
+  &:focus-visible {
+    outline: 1.5px solid var(--plum-400);
+    outline-offset: 2px;
+  }
 }
 .stepper {
   display: flex;
   align-items: center;
   gap: 10px;
+  grid-area: stepper;
+
+  @include up(md) {
+    grid-area: auto;
+  }
 }
 .qty {
   font: 500 rem(16px) var(--font-mono);
@@ -87,8 +127,16 @@
 }
 .line-total {
   font: 500 rem(16px) var(--font-mono);
-  min-width: 80px;
+  min-width: 0;
   text-align: right;
+  grid-area: total;
+  align-self: start;
+
+  @include up(md) {
+    grid-area: auto;
+    min-width: 80px;
+    align-self: auto;
+  }
 }
 
 .freq {
@@ -96,15 +144,20 @@
   padding: 0;
   margin: 32px 0 0;
   min-width: 0;
-}
-.freq legend {
-  padding: 0;
+
+  legend {
+    padding: 0;
+  }
 }
 .options {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 12px;
   margin-top: 14px;
+
+  @include up(md) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 .option {
   display: block;
@@ -115,14 +168,18 @@
   transition:
     background var(--dur-fast),
     border-color var(--dur-fast);
+
+  &:hover {
+    border-color: var(--border-strong);
+  }
 }
-.option:hover {
-  border-color: var(--border-strong);
-}
-.option-on,
-.option-on:hover {
-  background: var(--plum-50);
-  border-color: var(--plum-400);
+// Must stay after .option (same element) so the selected colours win on hover.
+.option-on {
+  &,
+  &:hover {
+    background: var(--plum-50);
+    border-color: var(--plum-400);
+  }
 }
 .option-head {
   display: flex;
@@ -139,39 +196,4 @@
   text-align: center;
   margin-top: 14px;
   font-size: rem(14px);
-}
-
-@media (max-width: 960px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 640px) {
-  .empty {
-    padding: 64px var(--gutter);
-  }
-  .line {
-    grid-template-columns: 72px minmax(0, 1fr) auto;
-    grid-template-areas: 'thumb info total' 'thumb stepper stepper';
-    gap: 8px 16px;
-  }
-  .thumb {
-    grid-area: thumb;
-    --photo-h: 72px !important;
-    align-self: start;
-  }
-  .info {
-    grid-area: info;
-  }
-  .stepper {
-    grid-area: stepper;
-  }
-  .line-total {
-    grid-area: total;
-    min-width: 0;
-    align-self: start;
-  }
-  .options {
-    grid-template-columns: 1fr;
-  }
 }

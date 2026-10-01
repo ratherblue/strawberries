@@ -1,4 +1,4 @@
-@use '../functions' as *;
+@use '../tools' as *;
 
 // Field wrapper: label + control + hint
 .sb-field {
@@ -150,6 +150,31 @@
     height: 1px;
     margin: 0;
   }
+
+  &:has(input:disabled) {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.sb-check {
+  &:hover .sb-check-box {
+    border-color: var(--leaf-500);
+  }
+
+  input:checked + .sb-check-box {
+    background: var(--leaf-600);
+    border-color: var(--leaf-600);
+
+    .sb-icon,
+    .sb-radio-dot {
+      transform: scale(1);
+    }
+  }
+
+  input:focus-visible + .sb-check-box {
+    box-shadow: var(--ring);
+  }
 }
 
 .sb-check-box {
@@ -170,16 +195,11 @@
   &.radio {
     border-radius: 50%;
   }
-}
 
-.sb-check:hover .sb-check-box {
-  border-color: var(--leaf-500);
-}
-
-.sb-check-box .sb-icon,
-.sb-radio-dot {
-  transform: scale(0);
-  transition: transform var(--dur-base) var(--ease-pop);
+  .sb-icon {
+    transform: scale(0);
+    transition: transform var(--dur-base) var(--ease-pop);
+  }
 }
 
 .sb-radio-dot {
@@ -187,27 +207,26 @@
   height: 8px;
   border-radius: 50%;
   background: #fff;
+  transform: scale(0);
+  transition: transform var(--dur-base) var(--ease-pop);
 }
 
-.sb-check input:checked + .sb-check-box {
-  background: var(--leaf-600);
-  border-color: var(--leaf-600);
-
-  .sb-icon,
-  .sb-radio-dot {
-    transform: scale(1);
+.sb-switch {
+  &:hover .sb-switch-track {
+    background: var(--ink-300);
   }
-}
 
-.sb-check input:focus-visible + .sb-check-box,
-.sb-switch input:focus-visible + .sb-switch-track {
-  box-shadow: var(--ring);
-}
+  input:checked + .sb-switch-track {
+    background: var(--leaf-600);
 
-.sb-check:has(input:disabled),
-.sb-switch:has(input:disabled) {
-  opacity: 0.5;
-  cursor: not-allowed;
+    .sb-switch-thumb {
+      transform: translateX(18px);
+    }
+  }
+
+  input:focus-visible + .sb-switch-track {
+    box-shadow: var(--ring);
+  }
 }
 
 .sb-switch-track {
@@ -230,15 +249,4 @@
   background: #fff;
   box-shadow: 0 1px 3px rgba(42, 31, 41, 0.25);
   transition: transform var(--dur-base) var(--ease-pop);
-}
-
-.sb-switch:hover .sb-switch-track {
-  background: var(--ink-300);
-}
-
-.sb-switch input:checked + .sb-switch-track {
-  background: var(--leaf-600);
-  .sb-switch-thumb {
-    transform: translateX(18px);
-  }
 }

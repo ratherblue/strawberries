@@ -15,7 +15,7 @@ export function Header() {
   // Close the mobile menu whenever the route changes or the viewport grows.
   useEffect(() => setOpen(false), [pathname])
   useEffect(() => {
-    const mq = window.matchMedia('(min-width: 961px)')
+    const mq = window.matchMedia(`(min-width: ${s.desktopMin})`)
     const close = () => mq.matches && setOpen(false)
     mq.addEventListener('change', close)
     return () => mq.removeEventListener('change', close)

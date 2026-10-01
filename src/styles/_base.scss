@@ -102,8 +102,8 @@ body {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
+* {
+  @media (prefers-reduced-motion: reduce) {
     animation-duration: 1ms !important;
     transition-duration: 1ms !important;
   }

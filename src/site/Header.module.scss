@@ -1,6 +1,11 @@
-@use '../styles/functions' as *;
+@use '../styles/tools' as *;
 
 $bar-height: 68px;
+
+// Read by Header.tsx so the JS breakpoint matches the CSS one.
+:export {
+  desktop-min: breakpoint(xxl);
+}
 
 .header {
   position: sticky;
@@ -18,22 +23,35 @@ $bar-height: 68px;
   height: $bar-height;
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 12px;
+
+  @include up(xs) {
+    gap: 32px;
+  }
 }
 .wordmark {
-  font: 400 #{rem(26px)}/ 1 var(--font-display);
+  font: 400 #{rem(22px)}/ 1 var(--font-display);
   color: var(--plum-600);
   text-decoration: none;
   letter-spacing: -0.02em;
   white-space: nowrap;
-}
-.wordmark:hover {
-  color: var(--plum-700);
+
+  &:hover {
+    color: var(--plum-700);
+  }
+
+  @include up(xs) {
+    font-size: rem(26px);
+  }
 }
 .nav {
-  display: flex;
+  display: none;
   gap: 24px;
   flex: 1;
+
+  @include up(xxl) {
+    display: flex;
+  }
 }
 .link {
   color: var(--ink-700);
@@ -45,15 +63,19 @@ $bar-height: 68px;
   transition:
     color var(--dur-fast),
     border-color var(--dur-fast);
+
+  &:hover {
+    color: var(--plum-700);
+    border-bottom-color: var(--berry-200);
+  }
 }
-.link:hover {
-  color: var(--plum-700);
-  border-bottom-color: var(--berry-200);
-}
-.active,
-.active:hover {
-  color: var(--plum-700);
-  border-bottom-color: var(--berry-400);
+// Must stay after .link so the active colours win on hover.
+.active {
+  &,
+  &:hover {
+    color: var(--plum-700);
+    border-bottom-color: var(--berry-400);
+  }
 }
 .actions {
   display: flex;
@@ -81,55 +103,46 @@ $bar-height: 68px;
   animation: sb-pop var(--dur-slow) var(--ease-pop);
 }
 .menu-btn {
-  display: none;
+  display: inline-grid;
+
+  @include up(xxl) {
+    display: none;
+  }
 }
 .mobile-nav {
   display: none;
 }
+// Must stay after .mobile-nav so the open menu's display wins.
+.mobile-open {
+  display: flex;
+  flex-direction: column;
+  padding: 8px var(--gutter) 20px;
+  border-top: 1.5px solid var(--border-soft);
+  animation: sb-fade var(--dur-base) var(--ease-out);
+  // The header is sticky, so the page can't scroll the menu into view on short
+  // screens (e.g. a phone in landscape). Cap it below the bar (minus the header's bottom border) and let it scroll itself.
+  max-height: calc(100vh - #{$bar-height} - 1.5px);
+  max-height: calc(100dvh - #{$bar-height} - 1.5px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  box-sizing: border-box;
 
-@media (max-width: 960px) {
-  .nav {
+  @include up(xxl) {
     display: none;
-  }
-  .menu-btn {
-    display: inline-grid;
-  }
-  .mobile-nav[hidden] {
-    display: none;
-  }
-  .mobile-open {
-    display: flex;
-    flex-direction: column;
-    padding: 8px var(--gutter) 20px;
-    border-top: 1.5px solid var(--border-soft);
-    animation: sb-fade var(--dur-base) var(--ease-out);
-    // The header is sticky, so the page can't scroll the menu into view on short
-    // screens (e.g. a phone in landscape). Cap it below the bar (minus the header's bottom border) and let it scroll itself.
-    max-height: calc(100vh - #{$bar-height} - 1.5px);
-    max-height: calc(100dvh - #{$bar-height} - 1.5px);
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    box-sizing: border-box;
-  }
-  .mobile-link {
-    padding: 14px 0;
-    font: 400 #{rem(24px)}/ 1.1 var(--font-display);
-    color: var(--plum-700);
-    text-decoration: none;
-    border-bottom: 1px dashed var(--border-soft);
-  }
-  .mobile-link:last-child {
-    border-bottom: 0;
-  }
-  .mobile-active {
-    color: var(--berry-600);
   }
 }
-@media (max-width: 420px) {
-  .bar {
-    gap: 12px;
+.mobile-link {
+  padding: 14px 0;
+  font: 400 #{rem(24px)}/ 1.1 var(--font-display);
+  color: var(--plum-700);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--border-soft);
+
+  &:last-child {
+    border-bottom: 0;
   }
-  .wordmark {
-    font-size: rem(22px);
-  }
+}
+// Must stay after .mobile-link so the active colour wins.
+.mobile-active {
+  color: var(--berry-600);
 }

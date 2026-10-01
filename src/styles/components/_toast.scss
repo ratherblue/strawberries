@@ -1,4 +1,4 @@
-@use '../functions' as *;
+@use '../tools' as *;
 
 // <div class="sb-toast success">
 .sb-toast {
@@ -6,8 +6,8 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  min-width: 280px;
-  max-width: 440px;
+  min-width: 0;
+  max-width: none;
   padding: 10px 10px 10px 12px;
   border-radius: var(--radius-md);
   background: var(--plum-700);
@@ -15,6 +15,11 @@
   box-shadow: var(--shadow-md);
   font: 400 #{rem(14px)}/ 1.4 var(--font-body);
   animation: sb-pop var(--dur-slow) var(--ease-pop);
+
+  @include up(sm) {
+    min-width: 280px;
+    max-width: 440px;
+  }
 
   &.success {
     background: var(--leaf-700);

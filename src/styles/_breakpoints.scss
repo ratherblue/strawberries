@@ -1,0 +1,27 @@
+@use 'sass:map';
+
+/// Mobile-first breakpoints. Styles outside a breakpoint are the phone layout;
+/// `@include up(md) { … }` layers on styles for that width and wider.
+$breakpoints: (
+  xs: 420px,
+  sm: 480px,
+  md: 640px,
+  lg: 720px,
+  xl: 860px,
+  xxl: 960px,
+);
+
+/// The min-width a breakpoint starts at, e.g. for exporting to JS.
+@function breakpoint($name) {
+  @if not map.has-key($breakpoints, $name) {
+    @error 'Unknown breakpoint `#{$name}`. Expected one of: #{map.keys($breakpoints)}';
+  }
+  @return map.get($breakpoints, $name);
+}
+
+/// Usage: .grid { grid-template-columns: 1fr; @include up(md) { grid-template-columns: 1fr 1fr; } }
+@mixin up($name) {
+  @media (min-width: breakpoint($name)) {
+    @content;
+  }
+}

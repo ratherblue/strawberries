@@ -7,6 +7,7 @@ interface PhotoProps {
   /** What the real photo will show — printed on the placeholder */
   label: string
   tone?: Tone
+  /** Fixed height in px. Leave out to size it in CSS via `--photo-h` (e.g. per breakpoint). */
   height?: number
   radius?: number
   className?: string
@@ -17,12 +18,15 @@ interface PhotoProps {
 export function Photo({
   label,
   tone = 'berry',
-  height = 180,
+  height,
   radius = 14,
   className,
   children,
 }: PhotoProps) {
-  const style = { '--photo-h': height + 'px', '--photo-r': radius + 'px' } as CSSProperties
+  const style = {
+    ...(height != null && { '--photo-h': height + 'px' }),
+    '--photo-r': radius + 'px',
+  } as CSSProperties
   return (
     <div
       className={cx(s.photo, s[tone], className)}

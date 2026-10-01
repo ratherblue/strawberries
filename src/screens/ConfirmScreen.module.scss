@@ -1,10 +1,14 @@
-@use '../styles/functions' as *;
+@use '../styles/tools' as *;
 
 .wrap {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 80px var(--gutter) 96px;
+  padding: 56px var(--gutter) 72px;
   text-align: center;
+
+  @include up(md) {
+    padding: 80px var(--gutter) 96px;
+  }
 }
 .berry {
   margin: 0 auto;
@@ -24,8 +28,12 @@
   }
 }
 .title {
-  font: 400 #{rem(48px)}/ 1.1 var(--font-display);
+  font: 400 #{rem(36px)}/ 1.1 var(--font-display);
   margin: 20px 0 12px;
+
+  @include up(md) {
+    font-size: rem(48px);
+  }
 }
 .copy {
   font: 400 #{rem(18px)}/ 1.55 var(--font-body);
@@ -44,21 +52,14 @@
   gap: 8px 20px;
   font-size: rem(15px);
   margin: 0;
-}
-.details dt {
-  font: 500 #{rem(12px)}/#{rem(22px)} var(--font-mono);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--berry-700);
-}
-.details dd {
-  margin: 0;
-}
-@media (max-width: 640px) {
-  .wrap {
-    padding: 56px var(--gutter) 72px;
+
+  dt {
+    font: 500 #{rem(12px)}/#{rem(22px)} var(--font-mono);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--berry-700);
   }
-  .title {
-    font-size: rem(36px);
+  dd {
+    margin: 0;
   }
 }

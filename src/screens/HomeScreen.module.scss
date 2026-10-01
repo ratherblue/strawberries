@@ -1,25 +1,47 @@
-@use '../styles/functions' as *;
+@use '../styles/tools' as *;
 
 .hero {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 72px var(--gutter) 56px;
+  padding: 32px var(--gutter) 40px;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: 56px;
+  grid-template-columns: 1fr;
+  gap: 40px;
   align-items: center;
+
+  @include up(md) {
+    padding-top: 48px;
+    padding-bottom: 56px;
+  }
+  @include up(xxl) {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 56px;
+    padding-top: 72px;
+  }
 }
 .hero-title {
-  font: 400 #{rem(64px)}/ 1.04 var(--font-display);
+  font: 400 #{rem(40px)}/ 1.08 var(--font-display);
   color: var(--plum-700);
   letter-spacing: -0.02em;
   margin: 18px 0 20px;
+
+  @include up(md) {
+    font-size: rem(52px);
+    line-height: 1.04;
+  }
+  @include up(xxl) {
+    font-size: rem(64px);
+  }
 }
 .hero-lead {
-  font: 400 #{rem(20px)}/ 1.55 var(--font-body);
+  font: 400 #{rem(18px)}/ 1.55 var(--font-body);
   color: var(--ink-700);
   margin: 0 0 32px;
   max-width: 460px;
+
+  @include up(md) {
+    font-size: rem(20px);
+  }
 }
 .hero-actions {
   display: flex;
@@ -29,13 +51,20 @@
 .hero-media {
   position: relative;
 }
+.hero-photo {
+  --photo-h: 320px;
+
+  @include up(md) {
+    --photo-h: 420px;
+  }
+}
 .sticker {
   position: absolute;
-  left: -22px;
-  bottom: 28px;
+  left: 12px;
+  bottom: 16px;
   background: #fff;
   border-radius: 18px;
-  padding: 14px 18px;
+  padding: 10px 14px;
   box-shadow: var(--shadow-sticker), var(--shadow-sm);
   border: 1.5px solid var(--border-soft);
   display: flex;
@@ -43,9 +72,20 @@
   align-items: center;
   transform: rotate(-3deg);
   transition: transform var(--dur-slow) var(--ease-pop);
-}
-.sticker:hover {
-  transform: rotate(-1deg) translateY(-2px);
+
+  &:hover {
+    transform: rotate(-1deg) translateY(-2px);
+  }
+
+  @include up(md) {
+    left: 16px;
+    bottom: 28px;
+    padding: 14px 18px;
+  }
+  // Hangs off the photo's left edge once there's room beside it.
+  @include up(xxl) {
+    left: -22px;
+  }
 }
 .sticker-title {
   font: 700 rem(15px) var(--font-body);
@@ -68,14 +108,24 @@
 .fresh {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 64px var(--gutter);
+  padding: 48px var(--gutter);
+
+  @include up(md) {
+    padding: 64px var(--gutter);
+  }
 }
 .fresh-head {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 16px;
   margin-bottom: 28px;
+
+  @include up(md) {
+    flex-direction: row;
+    align-items: flex-end;
+  }
 }
 .fresh-sub {
   margin: 8px 0 0 42px;
@@ -83,8 +133,15 @@
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 24px;
+
+  @include up(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @include up(xxl) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .how {
@@ -95,10 +152,18 @@
 .how-inner {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 64px var(--gutter);
+  padding: 48px var(--gutter);
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-  gap: 48px;
+  grid-template-columns: 1fr;
+  gap: 32px;
+
+  @include up(md) {
+    padding: 64px var(--gutter);
+  }
+  @include up(xxl) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 48px;
+  }
 }
 .how-copy {
   color: var(--ink-700);
@@ -109,8 +174,12 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 20px;
+
+  @include up(md) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 .step {
   background: #fff;
@@ -134,62 +203,4 @@
   font-size: rem(14px);
   color: var(--text-muted);
   line-height: 1.5;
-}
-
-@media (max-width: 960px) {
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding-top: 48px;
-  }
-  .hero-title {
-    font-size: rem(52px);
-  }
-  .sticker {
-    left: 16px;
-  }
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .how-inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-}
-@media (max-width: 640px) {
-  .hero {
-    padding-top: 32px;
-    padding-bottom: 40px;
-  }
-  .hero-title {
-    font-size: rem(40px);
-    line-height: 1.08;
-  }
-  .hero-lead {
-    font-size: rem(18px);
-  }
-  .hero-photo {
-    --photo-h: 320px !important;
-  }
-  .sticker {
-    left: 12px;
-    bottom: 16px;
-    padding: 10px 14px;
-  }
-  .fresh {
-    padding: 48px var(--gutter);
-  }
-  .fresh-head {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .grid {
-    grid-template-columns: 1fr;
-  }
-  .steps {
-    grid-template-columns: 1fr;
-  }
-  .how-inner {
-    padding: 48px var(--gutter);
-  }
 }

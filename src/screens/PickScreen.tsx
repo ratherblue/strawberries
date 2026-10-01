@@ -87,13 +87,7 @@ export function PickScreen() {
       </dl>
 
       <div className={s.split}>
-        <Photo
-          label="kids picking in row 12"
-          tone="berry"
-          height={460}
-          radius={26}
-          className={s.photo}
-        />
+        <Photo label="kids picking in row 12" tone="berry" radius={26} className={s.photo} />
         {booked ? (
           <Card stripes="leaf-gingham" padding={28} className={s.done}>
             <Badge tone="leaf" dot>

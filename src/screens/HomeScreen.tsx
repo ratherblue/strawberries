@@ -32,7 +32,7 @@ function Hero() {
         </div>
       </div>
       <div className={s.heroMedia}>
-        <Photo label="berries in a paper punnet" height={420} radius={26} className={s.heroPhoto} />
+        <Photo label="berries in a paper punnet" radius={26} className={s.heroPhoto} />
         <div className={s.sticker}>
           <Strawberry size={34} tilt={-12} />
           <div>

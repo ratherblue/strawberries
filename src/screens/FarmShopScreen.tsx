@@ -43,7 +43,7 @@ export function FarmShopScreen() {
           </Button>
         </div>
       </div>
-      <Photo label="the farm shop porch" tone="leaf" height={360} radius={26} className={s.photo} />
+      <Photo label="the farm shop porch" tone="leaf" radius={26} className={s.photo} />
 
       <div className={s.cards}>
         <Card padding={28}>

@@ -1,8 +1,8 @@
-@use '../styles/functions' as *;
+@use '../styles/tools' as *;
 
 .photo {
   position: relative;
-  height: var(--photo-h);
+  height: var(--photo-h, 180px);
   border-radius: var(--photo-r);
   display: grid;
   place-items: center;
