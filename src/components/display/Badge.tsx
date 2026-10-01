@@ -1,12 +1,12 @@
-import type { HTMLAttributes } from 'react';
-import { cx } from '../../lib/cx';
+import type { HTMLAttributes } from 'react'
+import { cx } from '../../lib/cx'
 
-export type BadgeTone = 'berry' | 'leaf' | 'plum' | 'sun' | 'neutral' | 'solid';
+export type BadgeTone = 'berry' | 'leaf' | 'plum' | 'sun' | 'neutral' | 'solid'
 
 export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
-  tone?: BadgeTone;
+  tone?: BadgeTone
   /** Leading status dot */
-  dot?: boolean;
+  dot?: boolean
 }
 
 export function Badge({ tone = 'berry', dot = false, className, children, ...rest }: BadgeProps) {
@@ -15,5 +15,5 @@ export function Badge({ tone = 'berry', dot = false, className, children, ...res
       {dot ? <span className="sb-badge-dot" /> : null}
       {children}
     </span>
-  );
+  )
 }

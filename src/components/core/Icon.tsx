@@ -1,8 +1,22 @@
-import type { CSSProperties } from 'react';
+import type { CSSProperties } from 'react'
 import {
-  ArrowLeft, ArrowRight, Calendar, Check, ChevronDown, Heart, Lock, Menu, Minus,
-  Phone, Plus, Search, ShoppingBasket, TriangleAlert, X, type LucideIcon,
-} from 'lucide-react';
+  ArrowLeft,
+  ArrowRight,
+  Calendar,
+  Check,
+  ChevronDown,
+  Heart,
+  Lock,
+  Menu,
+  Minus,
+  Phone,
+  Plus,
+  Search,
+  ShoppingBasket,
+  TriangleAlert,
+  X,
+  type LucideIcon,
+} from 'lucide-react'
 
 const ICONS = {
   'arrow-left': ArrowLeft,
@@ -20,22 +34,22 @@ const ICONS = {
   'shopping-basket': ShoppingBasket,
   'triangle-alert': TriangleAlert,
   x: X,
-} satisfies Record<string, LucideIcon>;
+} satisfies Record<string, LucideIcon>
 
-export type IconName = keyof typeof ICONS;
+export type IconName = keyof typeof ICONS
 
 export interface IconProps {
   /** Lucide icon name, kebab-case */
-  name: IconName;
+  name: IconName
   /** Pixel size. Default 20 */
-  size?: number;
-  color?: string;
-  className?: string;
-  style?: CSSProperties;
+  size?: number
+  color?: string
+  className?: string
+  style?: CSSProperties
 }
 
 export function Icon({ name, size = 20, color, className = '', style }: IconProps) {
-  const Glyph = ICONS[name];
+  const Glyph = ICONS[name]
   return (
     <Glyph
       aria-hidden="true"
@@ -46,5 +60,5 @@ export function Icon({ name, size = 20, color, className = '', style }: IconProp
       color={color}
       style={style}
     />
-  );
+  )
 }

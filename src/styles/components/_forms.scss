@@ -9,7 +9,7 @@
 }
 
 .sb-label {
-  font: 600 #{rem(13px)}/1.2 var(--font-body);
+  font: 600 #{rem(13px)}/ 1.2 var(--font-body);
   color: var(--text-secondary);
 }
 
@@ -22,30 +22,53 @@
   border-radius: 0;
   border: 1.5px solid var(--border-soft);
   background: var(--surface-card);
-  font: 400 #{rem(15px)}/1.4 var(--font-body);
+  font: 400 #{rem(15px)}/ 1.4 var(--font-body);
   color: var(--text-body);
   outline: none;
-  transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+  transition:
+    border-color var(--dur-fast),
+    box-shadow var(--dur-fast);
 
   // Sizes match Button heights. Later rules (date, multi) override by order.
-  &.sm { height: var(--control-sm); padding: 0 10px; font-size: rem(13px); }
-  &.md { height: var(--control-md); padding: 0 12px; font-size: rem(14px); }
-  &.lg { height: var(--control-lg); padding: 0 14px; font-size: rem(16px); }
+  &.sm {
+    height: var(--control-sm);
+    padding: 0 10px;
+    font-size: rem(13px);
+  }
+  &.md {
+    height: var(--control-md);
+    padding: 0 12px;
+    font-size: rem(14px);
+  }
+  &.lg {
+    height: var(--control-lg);
+    padding: 0 14px;
+    font-size: rem(16px);
+  }
 
-  &[type="date"] {
+  &[type='date'] {
     font-family: var(--font-mono);
     font-size: rem(14px);
 
     &::-webkit-calendar-picker-indicator {
-      opacity: .55;
+      opacity: 0.55;
       cursor: pointer;
-      &:hover { opacity: 1; }
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 
-  &::placeholder { color: var(--ink-400); }
-  &:hover { border-color: var(--border-strong); }
-  &:focus { border-color: var(--plum-400); box-shadow: none; }
+  &::placeholder {
+    color: var(--ink-400);
+  }
+  &:hover {
+    border-color: var(--border-strong);
+  }
+  &:focus {
+    border-color: var(--plum-400);
+    box-shadow: none;
+  }
 
   // Textarea
   &.multi {
@@ -57,8 +80,13 @@
   }
 
   &.error,
-  &.error:hover { border-color: var(--berry-500); }
-  &.error:focus { border-color: var(--berry-500); box-shadow: none; }
+  &.error:hover {
+    border-color: var(--berry-500);
+  }
+  &.error:focus {
+    border-color: var(--berry-500);
+    box-shadow: none;
+  }
 
   &:disabled {
     background: var(--surface-sunken);
@@ -68,13 +96,17 @@
 }
 
 .sb-hint {
-  font: 400 #{rem(12px)}/1.4 var(--font-body);
+  font: 400 #{rem(12px)}/ 1.4 var(--font-body);
   color: var(--text-muted);
-  &.error { color: var(--danger); }
+  &.error {
+    color: var(--danger);
+  }
 }
 
 // Select: an .sb-input with a custom chevron
-.sb-select-wrap { position: relative; }
+.sb-select-wrap {
+  position: relative;
+}
 
 .sb-select {
   appearance: none;
@@ -82,8 +114,12 @@
   padding-right: 40px;
   cursor: pointer;
 
-  &.sm { padding-right: 32px; }
-  &.md { padding-right: 36px; }
+  &.sm {
+    padding-right: 32px;
+  }
+  &.md {
+    padding-right: 36px;
+  }
 }
 
 .sb-select-chev {
@@ -104,7 +140,7 @@
   gap: 10px;
   cursor: pointer;
   user-select: none;
-  font: 500 #{rem(15px)}/1.3 var(--font-body);
+  font: 500 #{rem(15px)}/ 1.3 var(--font-body);
   color: var(--text-body);
 
   input {
@@ -127,12 +163,18 @@
   border: 1.5px solid var(--border-strong);
   background: var(--surface-card);
   color: #fff;
-  transition: background var(--dur-fast), border-color var(--dur-fast);
+  transition:
+    background var(--dur-fast),
+    border-color var(--dur-fast);
 
-  &.radio { border-radius: 50%; }
+  &.radio {
+    border-radius: 50%;
+  }
 }
 
-.sb-check:hover .sb-check-box { border-color: var(--leaf-500); }
+.sb-check:hover .sb-check-box {
+  border-color: var(--leaf-500);
+}
 
 .sb-check-box .sb-icon,
 .sb-radio-dot {
@@ -152,15 +194,19 @@
   border-color: var(--leaf-600);
 
   .sb-icon,
-  .sb-radio-dot { transform: scale(1); }
+  .sb-radio-dot {
+    transform: scale(1);
+  }
 }
 
 .sb-check input:focus-visible + .sb-check-box,
-.sb-switch input:focus-visible + .sb-switch-track { box-shadow: var(--ring); }
+.sb-switch input:focus-visible + .sb-switch-track {
+  box-shadow: var(--ring);
+}
 
 .sb-check:has(input:disabled),
 .sb-switch:has(input:disabled) {
-  opacity: .5;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
@@ -182,13 +228,17 @@
   height: 18px;
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0 1px 3px rgba(42, 31, 41, .25);
+  box-shadow: 0 1px 3px rgba(42, 31, 41, 0.25);
   transition: transform var(--dur-base) var(--ease-pop);
 }
 
-.sb-switch:hover .sb-switch-track { background: var(--ink-300); }
+.sb-switch:hover .sb-switch-track {
+  background: var(--ink-300);
+}
 
 .sb-switch input:checked + .sb-switch-track {
   background: var(--leaf-600);
-  .sb-switch-thumb { transform: translateX(18px); }
+  .sb-switch-thumb {
+    transform: translateX(18px);
+  }
 }

@@ -4,4 +4,4 @@ export const NAV = [
   { to: '/field', label: 'Our field' },
   { to: '/pick', label: 'Pick-your-own' },
   { to: '/farm-shop', label: 'Farm shop' },
-] as const;
+] as const

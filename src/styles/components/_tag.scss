@@ -12,7 +12,7 @@
   border-radius: var(--radius-pill);
   border: 1.5px solid var(--border-soft);
   background: var(--surface-card);
-  font: 500 #{rem(14px)}/1 var(--font-body);
+  font: 500 #{rem(14px)}/ 1 var(--font-body);
   color: var(--text-secondary);
   transition:
     background var(--dur-fast),
@@ -22,11 +22,19 @@
 
   &.is-clickable {
     cursor: pointer;
-    &:hover { border-color: var(--plum-200); background: var(--plum-50); }
-    &:active { transform: scale(.96); }
+    &:hover {
+      border-color: var(--plum-200);
+      background: var(--plum-50);
+    }
+    &:active {
+      transform: scale(0.96);
+    }
   }
 
-  &:focus-visible { outline: none; box-shadow: var(--ring); }
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--ring);
+  }
 
   &.is-selected,
   &.is-selected:hover {
@@ -37,7 +45,7 @@
 
   &:disabled {
     cursor: not-allowed;
-    opacity: .45;
+    opacity: 0.45;
   }
 }
 
@@ -50,6 +58,10 @@
   border-radius: 50%;
   cursor: pointer;
 
-  &:hover { background: rgba(42, 31, 41, .08); }
-  .sb-tag.is-selected &:hover { background: rgba(255, 255, 255, .18); }
+  &:hover {
+    background: rgba(42, 31, 41, 0.08);
+  }
+  .sb-tag.is-selected &:hover {
+    background: rgba(255, 255, 255, 0.18);
+  }
 }

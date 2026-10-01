@@ -47,35 +47,58 @@
   &.primary {
     background: var(--accent);
     color: #fff;
-    &:hover { background: var(--accent-hover); color: #fff; }
-    &:active { background: var(--accent-press); transform: translateY(1px); }
+    &:hover {
+      background: var(--accent-hover);
+      color: #fff;
+    }
+    &:active {
+      background: var(--accent-press);
+      transform: translateY(1px);
+    }
   }
   &.berry {
     background: var(--berry-600);
     color: #fff;
-    &:hover { background: var(--berry-700); color: #fff; }
-    &:active { background: #7E1822; transform: translateY(1px); }
+    &:hover {
+      background: var(--berry-700);
+      color: #fff;
+    }
+    &:active {
+      background: #7e1822;
+      transform: translateY(1px);
+    }
   }
   &.secondary {
     background: var(--surface-card);
     color: var(--plum-700);
     border-color: var(--plum-200);
-    &:hover { background: var(--plum-50); border-color: var(--plum-400); color: var(--plum-700); }
+    &:hover {
+      background: var(--plum-50);
+      border-color: var(--plum-400);
+      color: var(--plum-700);
+    }
   }
   &.ghost {
     background: transparent;
     color: var(--plum-700);
-    &:hover { background: var(--plum-50); color: var(--plum-700); }
+    &:hover {
+      background: var(--plum-50);
+      color: var(--plum-700);
+    }
   }
   &.secondary:active,
-  &.ghost:active { transform: scale(.97); }
+  &.ghost:active {
+    transform: scale(0.97);
+  }
 
-  &.block { width: 100%; }
+  &.block {
+    width: 100%;
+  }
 
   // Doubled class so disabled beats the variants' :hover / :active.
   &.sb-btn:disabled,
-  &.sb-btn[aria-disabled="true"] {
-    opacity: .45;
+  &.sb-btn[aria-disabled='true'] {
+    opacity: 0.45;
     cursor: not-allowed;
     transform: none;
     box-shadow: none;

@@ -8,12 +8,18 @@
   place-items: center;
   overflow: hidden;
 }
-.berry { background: var(--pattern-diagonal-berry), var(--berry-50); }
-.leaf { background: var(--pattern-diagonal-leaf), var(--leaf-50); }
-.plum { background: var(--pattern-diagonal-plum), var(--plum-50); }
+.berry {
+  background: var(--pattern-diagonal-berry), var(--berry-50);
+}
+.leaf {
+  background: var(--pattern-diagonal-leaf), var(--leaf-50);
+}
+.plum {
+  background: var(--pattern-diagonal-plum), var(--plum-50);
+}
 .label {
-  font: 500 #{rem(11px)}/1 var(--font-mono);
-  letter-spacing: .1em;
+  font: 500 #{rem(11px)}/ 1 var(--font-mono);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-500);
   background: var(--cream-50);

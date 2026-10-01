@@ -1,37 +1,53 @@
-import { useEffect, useRef, type ReactNode } from 'react';
-import { IconButton } from '../core/IconButton';
-import type { CardStripes } from '../display/Card';
-import { cx } from '../../lib/cx';
+import { useEffect, useRef, type ReactNode } from 'react'
+import { IconButton } from '../core/IconButton'
+import type { CardStripes } from '../display/Card'
+import { cx } from '../../lib/cx'
 
 export interface DialogProps {
-  open: boolean;
-  onClose?: () => void;
-  title: ReactNode;
-  children?: ReactNode;
+  open: boolean
+  onClose?: () => void
+  title: ReactNode
+  children?: ReactNode
   /** Footer buttons, right-aligned */
-  actions?: ReactNode;
+  actions?: ReactNode
   /** Pattern band at the top; false to hide */
-  stripes?: false | CardStripes;
+  stripes?: false | CardStripes
   /** Max width in px. Default 440 */
-  width?: number;
-  inline?: boolean;
+  width?: number
+  inline?: boolean
 }
 
-export function Dialog({ open, onClose, title, children, actions, stripes = 'berry', width = 440, inline = false }: DialogProps) {
-  const ref = useRef<HTMLDivElement>(null);
+export function Dialog({
+  open,
+  onClose,
+  title,
+  children,
+  actions,
+  stripes = 'berry',
+  width = 440,
+  inline = false,
+}: DialogProps) {
+  const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
-    if (!open) return;
-    const prev = document.activeElement as HTMLElement | null;
-    ref.current?.focus();
-    const k = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose?.(); };
-    window.addEventListener('keydown', k);
-    return () => { window.removeEventListener('keydown', k); prev?.focus(); };
-  }, [open, onClose]);
-  if (!open) return null;
+    if (!open) return
+    const prev = document.activeElement as HTMLElement | null
+    ref.current?.focus()
+    const k = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose?.()
+    }
+    window.addEventListener('keydown', k)
+    return () => {
+      window.removeEventListener('keydown', k)
+      prev?.focus()
+    }
+  }, [open, onClose])
+  if (!open) return null
   return (
     <div
       className={cx('sb-dialog-overlay', inline && 'inline')}
-      onMouseDown={(e) => { if (e.target === e.currentTarget) onClose?.(); }}
+      onMouseDown={(e) => {
+        if (e.target === e.currentTarget) onClose?.()
+      }}
     >
       <div
         ref={ref}
@@ -45,11 +61,13 @@ export function Dialog({ open, onClose, title, children, actions, stripes = 'ber
         {stripes ? <div className={'sb-dialog-stripes sb-pattern ' + stripes} /> : null}
         <div className="sb-dialog-head">
           <h2 className="sb-dialog-title">{title}</h2>
-          {onClose ? <IconButton icon="x" label="Close" variant="ghost" size="sm" onClick={onClose} /> : null}
+          {onClose ? (
+            <IconButton icon="x" label="Close" variant="ghost" size="sm" onClick={onClose} />
+          ) : null}
         </div>
         <div className="sb-dialog-body">{children}</div>
         {actions ? <div className="sb-dialog-actions">{actions}</div> : null}
       </div>
     </div>
-  );
+  )
 }

@@ -8,16 +8,34 @@
   height: 24px;
   padding: 0 10px;
   border-radius: var(--radius-pill);
-  font: 600 #{rem(12px)}/1 var(--font-body);
-  letter-spacing: .01em;
+  font: 600 #{rem(12px)}/ 1 var(--font-body);
+  letter-spacing: 0.01em;
   white-space: nowrap;
 
-  &.berry { background: var(--berry-50); color: var(--berry-700); }
-  &.leaf { background: var(--leaf-50); color: var(--leaf-700); }
-  &.plum { background: var(--plum-50); color: var(--plum-600); }
-  &.sun { background: var(--sun-50); color: var(--sun-700); }
-  &.neutral { background: var(--cream-200); color: var(--ink-700); }
-  &.solid { background: var(--plum-600); color: #fff; }
+  &.berry {
+    background: var(--berry-50);
+    color: var(--berry-700);
+  }
+  &.leaf {
+    background: var(--leaf-50);
+    color: var(--leaf-700);
+  }
+  &.plum {
+    background: var(--plum-50);
+    color: var(--plum-600);
+  }
+  &.sun {
+    background: var(--sun-50);
+    color: var(--sun-700);
+  }
+  &.neutral {
+    background: var(--cream-200);
+    color: var(--ink-700);
+  }
+  &.solid {
+    background: var(--plum-600);
+    color: #fff;
+  }
 }
 
 .sb-badge-dot {

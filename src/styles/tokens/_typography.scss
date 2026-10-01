@@ -1,9 +1,9 @@
 @use '../functions' as *;
 
 :root {
-  --font-display: 'Libre Caslon Text',Georgia,'Times New Roman',serif;
-  --font-body: 'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --font-mono: 'DM Mono',ui-monospace,Menlo,monospace;
+  --font-display: 'Libre Caslon Text', Georgia, 'Times New Roman', serif;
+  --font-body: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, Menlo, monospace;
   --fs-xs: #{rem(12px)};
   --fs-sm: #{rem(14px)};
   --fs-base: #{rem(16px)};

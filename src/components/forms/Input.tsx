@@ -1,42 +1,61 @@
-import { useId, type InputHTMLAttributes, type TextareaHTMLAttributes } from 'react';
-import { cx } from '../../lib/cx';
+import { useId, type InputHTMLAttributes, type TextareaHTMLAttributes } from 'react'
+import { cx } from '../../lib/cx'
 
-type Size = 'sm' | 'md' | 'lg';
+type Size = 'sm' | 'md' | 'lg'
 
 interface FieldProps {
   /** Height matches Button: sm 24px · md 30px · lg 36px. Default md */
-  size?: Size;
-  label?: string;
+  size?: Size
+  label?: string
   /** Helper text below the field */
-  hint?: string;
+  hint?: string
   /** Error message — replaces hint and turns the border berry */
-  error?: string | null;
-  className?: string;
+  error?: string | null
+  className?: string
 }
 
 export type InputProps =
   | (FieldProps & Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & { multiline?: false })
-  | (FieldProps & Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'size'> & { multiline: true });
+  | (FieldProps & Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'size'> & { multiline: true })
 
-export function Input({ label, hint, error, id, multiline = false, size = 'md', className, ...rest }: InputProps) {
-  const auto = useId();
-  const fid = id ?? auto;
-  const hintId = fid + '-hint';
-  const msg = error || hint;
-  const cls = cx('sb-input', size, multiline && 'multi', error && 'error');
+export function Input({
+  label,
+  hint,
+  error,
+  id,
+  multiline = false,
+  size = 'md',
+  className,
+  ...rest
+}: InputProps) {
+  const auto = useId()
+  const fid = id ?? auto
+  const hintId = fid + '-hint'
+  const msg = error || hint
+  const cls = cx('sb-input', size, multiline && 'multi', error && 'error')
   const shared = {
     id: fid,
     className: cls,
     'aria-invalid': error ? true : undefined,
     'aria-describedby': msg ? hintId : undefined,
-  };
+  }
   return (
     <div className={cx('sb-field', className)}>
-      {label ? <label className="sb-label" htmlFor={fid}>{label}</label> : null}
-      {multiline
-        ? <textarea {...shared} {...(rest as TextareaHTMLAttributes<HTMLTextAreaElement>)} />
-        : <input {...shared} {...(rest as InputHTMLAttributes<HTMLInputElement>)} />}
-      {msg ? <span id={hintId} className={cx('sb-hint', error && 'error')}>{msg}</span> : null}
+      {label ? (
+        <label className="sb-label" htmlFor={fid}>
+          {label}
+        </label>
+      ) : null}
+      {multiline ? (
+        <textarea {...shared} {...(rest as TextareaHTMLAttributes<HTMLTextAreaElement>)} />
+      ) : (
+        <input {...shared} {...(rest as InputHTMLAttributes<HTMLInputElement>)} />
+      )}
+      {msg ? (
+        <span id={hintId} className={cx('sb-hint', error && 'error')}>
+          {msg}
+        </span>
+      ) : null}
     </div>
-  );
+  )
 }

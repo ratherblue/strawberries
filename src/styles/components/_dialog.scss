@@ -12,7 +12,9 @@
   -webkit-backdrop-filter: blur(3px);
   animation: sb-fade var(--dur-base) var(--ease-out);
 
-  &.inline { position: absolute; }
+  &.inline {
+    position: absolute;
+  }
 }
 
 .sb-dialog {
@@ -24,7 +26,9 @@
   animation: sb-pop var(--dur-slow) var(--ease-pop);
 }
 
-.sb-dialog-stripes { height: 12px; }
+.sb-dialog-stripes {
+  height: 12px;
+}
 
 .sb-dialog-head {
   display: flex;
@@ -36,14 +40,14 @@
 
 .sb-dialog-title {
   margin: 4px 0 0;
-  font: 400 #{rem(26px)}/1.15 var(--font-display);
+  font: 400 #{rem(26px)}/ 1.15 var(--font-display);
   color: var(--text-heading);
   letter-spacing: var(--tracking-display);
 }
 
 .sb-dialog-body {
   padding: 10px 28px 24px;
-  font: 400 #{rem(15px)}/1.55 var(--font-body);
+  font: 400 #{rem(15px)}/ 1.55 var(--font-body);
   color: var(--text-secondary);
 }
 

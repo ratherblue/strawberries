@@ -1,53 +1,53 @@
 :root {
   /* Berry — the fruit. Decoration, highlights, badges. */
-  --berry-50: #FFF1F2;
-  --berry-100: #FFE0E3;
-  --berry-200: #FBC4CA;
-  --berry-300: #F79AA4;
-  --berry-400: #F06B78;
-  --berry-500: #E8434F;
-  --berry-600: #CC2F3C;
-  --berry-700: #A5222F;
+  --berry-50: #fff1f2;
+  --berry-100: #ffe0e3;
+  --berry-200: #fbc4ca;
+  --berry-300: #f79aa4;
+  --berry-400: #f06b78;
+  --berry-500: #e8434f;
+  --berry-600: #cc2f3c;
+  --berry-700: #a5222f;
   /* Leaf — forest green. Links, "on" states, success. */
-  --leaf-50: #F0F7EE;
-  --leaf-100: #DCEDD6;
-  --leaf-200: #BADBB0;
-  --leaf-400: #5FA66A;
-  --leaf-500: #3E8E4F;
-  --leaf-600: #2F6B3A;
-  --leaf-700: #24532D;
-  --leaf-800: #1B3F22;
+  --leaf-50: #f0f7ee;
+  --leaf-100: #dcedd6;
+  --leaf-200: #badbb0;
+  --leaf-400: #5fa66a;
+  --leaf-500: #3e8e4f;
+  --leaf-600: #2f6b3a;
+  --leaf-700: #24532d;
+  --leaf-800: #1b3f22;
   /* Plum — dark accent (#694165). Primary actions, headings. */
-  --plum-50: #F7F0F6;
-  --plum-100: #EEDFEC;
-  --plum-200: #DCC2D8;
-  --plum-400: #9A6A95;
-  --plum-500: #7F527A;
+  --plum-50: #f7f0f6;
+  --plum-100: #eedfec;
+  --plum-200: #dcc2d8;
+  --plum-400: #9a6a95;
+  --plum-500: #7f527a;
   --plum-600: #694165;
   --plum-700: #733254;
-  --plum-800: #3D243B;
+  --plum-800: #3d243b;
   /* Cream + ink neutrals (warm, plum-tinted) */
-  --cream-50: #FFFCF8;
-  --cream-100: #FFF7EF;
-  --cream-200: #FBEEE2;
-  --cream-300: #F3E2D2;
-  --ink-900: #2A1F29;
-  --ink-700: #4A3D48;
-  --ink-500: #76687A;
-  --ink-400: #9B8E98;
-  --ink-300: #C9BEC6;
-  --ink-200: #E9E0E4;
+  --cream-50: #fffcf8;
+  --cream-100: #fff7ef;
+  --cream-200: #fbeee2;
+  --cream-300: #f3e2d2;
+  --ink-900: #2a1f29;
+  --ink-700: #4a3d48;
+  --ink-500: #76687a;
+  --ink-400: #9b8e98;
+  --ink-300: #c9bec6;
+  --ink-200: #e9e0e4;
   /* Sprinkles */
-  --seed-300: #FFE9A8;
-  --sun-400: #F6C453;
-  --sun-50: #FFF4D6;
-  --sun-700: #80560A;
-  --sky-50: #E8F4F8;
-  --sky-700: #2F6F86;
+  --seed-300: #ffe9a8;
+  --sun-400: #f6c453;
+  --sun-50: #fff4d6;
+  --sun-700: #80560a;
+  --sky-50: #e8f4f8;
+  --sky-700: #2f6f86;
 
   /* Semantic */
   --bg-page: var(--cream-50);
-  --surface-card: #FFFFFF;
+  --surface-card: #ffffff;
   --surface-sunken: var(--cream-100);
   --surface-muted: var(--cream-200);
   --surface-tint: var(--berry-50);
@@ -58,7 +58,7 @@
   --text-subtle: var(--ink-400);
   --text-heading: var(--plum-700);
   --text-eyebrow: var(--berry-700);
-  --text-on-accent: #FFFFFF;
+  --text-on-accent: #ffffff;
   --link: var(--leaf-600);
   --link-hover: var(--leaf-800);
   --link-underline: var(--leaf-200);

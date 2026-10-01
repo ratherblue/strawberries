@@ -1,18 +1,18 @@
-import './styles/index.scss';
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { StoreProvider } from './state/store';
-import { Layout } from './site/Layout';
-import { HomeScreen } from './screens/HomeScreen';
-import { ShopScreen } from './screens/ShopScreen';
-import { FieldScreen } from './screens/FieldScreen';
-import { PickScreen } from './screens/PickScreen';
-import { FarmShopScreen } from './screens/FarmShopScreen';
-import { CartScreen } from './screens/CartScreen';
-import { CheckoutScreen } from './screens/CheckoutScreen';
-import { ConfirmScreen } from './screens/ConfirmScreen';
-import { NotFoundScreen } from './screens/NotFoundScreen';
+import './styles/index.scss'
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { StoreProvider } from './state/store'
+import { Layout } from './site/Layout'
+import { HomeScreen } from './screens/HomeScreen'
+import { ShopScreen } from './screens/ShopScreen'
+import { FieldScreen } from './screens/FieldScreen'
+import { PickScreen } from './screens/PickScreen'
+import { FarmShopScreen } from './screens/FarmShopScreen'
+import { CartScreen } from './screens/CartScreen'
+import { CheckoutScreen } from './screens/CheckoutScreen'
+import { ConfirmScreen } from './screens/ConfirmScreen'
+import { NotFoundScreen } from './screens/NotFoundScreen'
 
 const router = createBrowserRouter(
   [
@@ -33,9 +33,15 @@ const router = createBrowserRouter(
   ],
   {
     basename: import.meta.env.BASE_URL.replace(/\/$/, '') || '/',
-    future: { v7_relativeSplatPath: true, v7_fetcherPersist: true, v7_normalizeFormMethod: true, v7_partialHydration: true, v7_skipActionErrorRevalidation: true },
+    future: {
+      v7_relativeSplatPath: true,
+      v7_fetcherPersist: true,
+      v7_normalizeFormMethod: true,
+      v7_partialHydration: true,
+      v7_skipActionErrorRevalidation: true,
+    },
   },
-);
+)
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -43,4 +49,4 @@ createRoot(document.getElementById('root')!).render(
       <RouterProvider router={router} future={{ v7_startTransition: true }} />
     </StoreProvider>
   </StrictMode>,
-);
+)

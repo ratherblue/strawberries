@@ -13,11 +13,15 @@
   background: var(--plum-700);
   color: #fff;
   box-shadow: var(--shadow-md);
-  font: 400 #{rem(14px)}/1.4 var(--font-body);
+  font: 400 #{rem(14px)}/ 1.4 var(--font-body);
   animation: sb-pop var(--dur-slow) var(--ease-pop);
 
-  &.success { background: var(--leaf-700); }
-  &.danger { background: var(--berry-700); }
+  &.success {
+    background: var(--leaf-700);
+  }
+  &.danger {
+    background: var(--berry-700);
+  }
 }
 
 .sb-toast-lead {
@@ -27,7 +31,7 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, .14);
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .sb-toast-body {
@@ -37,8 +41,12 @@
   flex-direction: column;
   gap: 1px;
 
-  strong { font-weight: 700; }
-  span { opacity: .88; }
+  strong {
+    font-weight: 700;
+  }
+  span {
+    opacity: 0.88;
+  }
 }
 
 .sb-toast-action {
@@ -48,10 +56,12 @@
   cursor: pointer;
   padding: 7px 9px;
   border-radius: 8px;
-  font: 700 #{rem(14px)}/1 var(--font-body);
+  font: 700 #{rem(14px)}/ 1 var(--font-body);
   color: var(--seed-300);
 
-  &:hover { background: rgba(255, 255, 255, .1); }
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
 }
 
 .sb-toast-close {
@@ -65,7 +75,10 @@
   height: 28px;
   border-radius: 50%;
   color: #fff;
-  opacity: .7;
+  opacity: 0.7;
 
-  &:hover { opacity: 1; background: rgba(255, 255, 255, .12); }
+  &:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.12);
+  }
 }

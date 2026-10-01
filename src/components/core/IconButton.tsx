@@ -1,17 +1,24 @@
-import type { ButtonHTMLAttributes } from 'react';
-import { Icon, type IconName } from './Icon';
-import { cx } from '../../lib/cx';
+import type { ButtonHTMLAttributes } from 'react'
+import { Icon, type IconName } from './Icon'
+import { cx } from '../../lib/cx'
 
 export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  icon: IconName;
+  icon: IconName
   /** Accessible label (also shown as native title) */
-  label: string;
-  variant?: 'outline' | 'ghost' | 'solid';
-  size?: 'sm' | 'md' | 'lg';
+  label: string
+  variant?: 'outline' | 'ghost' | 'solid'
+  size?: 'sm' | 'md' | 'lg'
 }
 
-export function IconButton({ icon, label, variant = 'outline', size = 'md', className, ...rest }: IconButtonProps) {
-  const px = { sm: 16, md: 20, lg: 22 }[size];
+export function IconButton({
+  icon,
+  label,
+  variant = 'outline',
+  size = 'md',
+  className,
+  ...rest
+}: IconButtonProps) {
+  const px = { sm: 16, md: 20, lg: 22 }[size]
   return (
     <button
       type="button"
@@ -22,5 +29,5 @@ export function IconButton({ icon, label, variant = 'outline', size = 'md', clas
     >
       <Icon name={icon} size={px} />
     </button>
-  );
+  )
 }

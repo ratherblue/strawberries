@@ -15,12 +15,24 @@
     border-color var(--dur-fast),
     color var(--dur-fast);
 
-  &.sm { width: 32px; height: 32px; }
-  &.md { width: 40px; height: 40px; }
-  &.lg { width: 48px; height: 48px; }
+  &.sm {
+    width: 32px;
+    height: 32px;
+  }
+  &.md {
+    width: 40px;
+    height: 40px;
+  }
+  &.lg {
+    width: 48px;
+    height: 48px;
+  }
 
   // Must come before :hover so ghost buttons still get the berry hover.
-  &.ghost { border-color: transparent; background: transparent; }
+  &.ghost {
+    border-color: transparent;
+    background: transparent;
+  }
 
   &:hover {
     background: var(--berry-50);
@@ -28,20 +40,31 @@
     color: var(--berry-700);
     transform: rotate(-8deg);
   }
-  &:active { transform: scale(.92); }
-  &:focus-visible { outline: none; box-shadow: var(--ring); }
+  &:active {
+    transform: scale(0.92);
+  }
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--ring);
+  }
 
   &.solid {
     background: var(--plum-600);
     border-color: var(--plum-600);
     color: #fff;
-    &:hover { background: var(--plum-700); border-color: var(--plum-700); color: #fff; }
+    &:hover {
+      background: var(--plum-700);
+      border-color: var(--plum-700);
+      color: #fff;
+    }
   }
 
   &:disabled {
-    opacity: .45;
+    opacity: 0.45;
     cursor: not-allowed;
     transform: none;
-    &:hover { transform: none; }
+    &:hover {
+      transform: none;
+    }
   }
 }

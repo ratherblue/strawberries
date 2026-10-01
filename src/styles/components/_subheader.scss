@@ -14,9 +14,16 @@
     line-height: 1.15;
     letter-spacing: var(--tracking-display);
 
-    &.sm { font-size: rem(18px); }
-    &.md { font-size: rem(24px); }
-    &.lg { font-size: rem(32px); gap: 12px; }
+    &.sm {
+      font-size: rem(18px);
+    }
+    &.md {
+      font-size: rem(24px);
+    }
+    &.lg {
+      font-size: rem(32px);
+      gap: 12px;
+    }
   }
 
   &.eyebrow {
@@ -28,6 +35,10 @@
   }
 
   // The berry wiggles on hover.
-  svg { transition: transform var(--dur-slow) var(--ease-pop); }
-  &:hover svg { transform: rotate(10deg) scale(1.08) !important; }
+  svg {
+    transition: transform var(--dur-slow) var(--ease-pop);
+  }
+  &:hover svg {
+    transform: rotate(10deg) scale(1.08) !important;
+  }
 }
