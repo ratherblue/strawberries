@@ -1,7 +1,6 @@
 @use 'tools' as *;
 
 // App-level globals layered on top of the design-system tokens + components.
-// No global border-box: like the prototype, containers are 1120px of content plus gutters.
 
 html {
   scroll-behavior: smooth;
@@ -42,16 +41,16 @@ a {
 }
 
 // Shared page scaffolding
+// Centred page column: --container-max (1120px) of content, with the gutter as
+// padding on either side. Pair it with a class that sets padding-block.
 .container {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
+  max-width: calc(var(--container-max) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
 }
 
 .page {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 32px var(--gutter) 56px;
+  padding-block: 32px 56px;
 
   @include up(lg) {
     padding-top: 48px;

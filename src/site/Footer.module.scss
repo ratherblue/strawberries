@@ -5,9 +5,7 @@
   color: #fff;
 }
 .grid {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 48px var(--gutter);
+  padding-block: 48px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
@@ -86,9 +84,7 @@
   }
 }
 .legal {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 18px var(--gutter) 28px;
+  padding-block: 18px 28px;
   border-top: 1.5px solid rgba(255, 255, 255, 0.12);
   display: flex;
   justify-content: space-between;

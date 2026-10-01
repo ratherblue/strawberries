@@ -1,11 +1,12 @@
 import { Button, Strawberry } from '../components'
 import { usePageTitle } from '../lib/usePageTitle'
+import { cx } from '../lib/cx'
 import s from './ConfirmScreen.module.scss'
 
 export function NotFoundScreen() {
   usePageTitle('Not found')
   return (
-    <div className={s.wrap}>
+    <div className={cx('container', s.wrap)}>
       <Strawberry size={72} tilt={12} className={s.berry} />
       <h1 className={s.title}>This row's not planted yet.</h1>
       <p className={s.copy}>

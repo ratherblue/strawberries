@@ -134,7 +134,7 @@ export function CheckoutScreen() {
   const total = money(totals(lines, frequency).total)
 
   return (
-    <div className="page">
+    <div className="container page">
       <Link to="/basket" className="back-link">
         ← Back to basket
       </Link>

@@ -34,7 +34,7 @@ export function ShopScreen() {
   if (filters.includes('Under $15')) list = list.filter((b) => b.price < 15)
 
   return (
-    <div className="page">
+    <div className="container page">
       <Subheader variant="eyebrow">The shop</Subheader>
       <h1 className={'page-title ' + s.title}>Everything from the field</h1>
       <div className={s.tabsWrap}>

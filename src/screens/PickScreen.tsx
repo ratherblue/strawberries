@@ -66,7 +66,7 @@ export function PickScreen() {
   }
 
   return (
-    <div className="page">
+    <div className="container page">
       <Link to="/field" className="back-link">
         ← Our field
       </Link>

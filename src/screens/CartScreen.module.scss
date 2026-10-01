@@ -1,13 +1,11 @@
 @use '../styles/tools' as *;
 
 .empty {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 64px var(--gutter);
+  padding-block: 64px;
   text-align: center;
 
   @include up(md) {
-    padding: 96px var(--gutter);
+    padding-block: 96px;
   }
 }
 .empty-berry {

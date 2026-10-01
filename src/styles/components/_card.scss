@@ -56,7 +56,9 @@
   }
 }
 
+// 14px of pattern, with the 1.5px border underneath it rather than eating into it.
 .sb-card-stripes {
+  box-sizing: content-box;
   height: 14px;
   border-bottom: 1.5px solid var(--border-soft);
 }

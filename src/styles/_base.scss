@@ -1,6 +1,14 @@
 // Element defaults, pattern utilities and shared keyframes.
 
+// Widths and heights include padding and border. Inherited, so a component can opt out.
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 html {
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Icon, type IconName } from './Icon'
 import { cx } from '../../lib/cx'
 
+// primary... or prime...berry, am I right? ha ha ha
 type Variant = 'primary' | 'berry' | 'secondary' | 'ghost'
 type Size = 'sm' | 'md' | 'lg'
 

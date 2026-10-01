@@ -8,7 +8,7 @@ export function FieldScreen() {
   usePageTitle('Our field')
   const navigate = useNavigate()
   return (
-    <div className="page">
+    <div className="container page">
       <Subheader variant="eyebrow">Our field</Subheader>
       <h1 className="page-title">Seven acres, one very old tractor.</h1>
       <p className="lead">

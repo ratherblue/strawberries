@@ -1,9 +1,7 @@
 @use '../styles/tools' as *;
 
 .hero {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 32px var(--gutter) 40px;
+  padding-block: 32px 40px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
@@ -106,12 +104,10 @@
 }
 
 .fresh {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 48px var(--gutter);
+  padding-block: 48px;
 
   @include up(md) {
-    padding: 64px var(--gutter);
+    padding-block: 64px;
   }
 }
 .fresh-head {
@@ -150,15 +146,13 @@
   border-bottom: 1.5px solid var(--border-soft);
 }
 .how-inner {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 48px var(--gutter);
+  padding-block: 48px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
 
   @include up(md) {
-    padding: 64px var(--gutter);
+    padding-block: 64px;
   }
   @include up(xxl) {
     grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);

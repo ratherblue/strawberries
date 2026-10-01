@@ -24,7 +24,7 @@ const SHELF: Array<[string, string, string, Tone]> = [
 export function FarmShopScreen() {
   usePageTitle('Farm shop')
   return (
-    <div className="page">
+    <div className="container page">
       <Link to="/field" className="back-link">
         ← Our field
       </Link>

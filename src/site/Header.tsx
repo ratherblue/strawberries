@@ -31,7 +31,7 @@ export function Header() {
 
   return (
     <header className={s.header}>
-      <div className={s.bar}>
+      <div className={cx('container', s.bar)}>
         <Link to="/" className={s.wordmark}>
           Strawberries
         </Link>

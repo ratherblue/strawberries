@@ -17,9 +17,6 @@ $bar-height: 68px;
   border-bottom: 1.5px solid var(--border-soft);
 }
 .bar {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
   height: $bar-height;
   display: flex;
   align-items: center;
@@ -125,7 +122,6 @@ $bar-height: 68px;
   max-height: calc(100dvh - #{$bar-height} - 1.5px);
   overflow-y: auto;
   overscroll-behavior: contain;
-  box-sizing: border-box;
 
   @include up(xxl) {
     display: none;

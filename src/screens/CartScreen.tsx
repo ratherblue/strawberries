@@ -15,7 +15,7 @@ const FREQS: Array<[Frequency, string, string]> = [
 
 export function EmptyBasket() {
   return (
-    <div className={s.empty}>
+    <div className={cx('container', s.empty)}>
       <Strawberry size={64} tilt={-12} className={s.emptyBerry} />
       <h1 className={s.emptyTitle}>Your basket's empty</h1>
       <p className={s.emptyCopy}>
@@ -34,7 +34,7 @@ export function CartScreen() {
   if (!lines.length) return <EmptyBasket />
 
   return (
-    <div className="page">
+    <div className="container page">
       <Subheader variant="eyebrow">Your basket</Subheader>
       <h1 className={'page-title ' + s.title}>Nearly there.</h1>
       <div className={s.layout}>
