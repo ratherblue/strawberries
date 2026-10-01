@@ -1,0 +1,31 @@
+:root{
+--radius-xs:4px;--radius-sm:8px;--radius-md:12px;--radius-lg:18px;--radius-xl:26px;--radius-pill:999px;
+--border-width:1.5px; /* @kind spacing */
+--shadow-xs:0 1px 2px rgba(83,50,80,.07);
+--shadow-sm:0 1px 2px rgba(83,50,80,.06),0 4px 12px -6px rgba(83,50,80,.16);
+--shadow-md:0 2px 4px rgba(83,50,80,.06),0 12px 28px -12px rgba(83,50,80,.24);
+--shadow-lg:0 4px 8px rgba(83,50,80,.08),0 24px 48px -16px rgba(83,50,80,.32);
+--shadow-sticker:6px 6px 0 var(--berry-100);
+--shadow-press:0 3px 0 var(--plum-800);
+--ring:0 0 0 2px var(--cream-50),0 0 0 4px var(--berry-300);
+--ease-out:cubic-bezier(.22,1,.36,1); /* @kind other */
+--ease-pop:cubic-bezier(.34,1.56,.64,1); /* @kind other */
+--dur-fast:140ms; /* @kind other */
+--dur-base:220ms; /* @kind other */
+--dur-slow:360ms; /* @kind other */
+/* Diagonal lines — the signature decoration. Always -45deg. */
+--pattern-diagonal-berry:repeating-linear-gradient(-45deg,var(--berry-300) 0 1.5px,transparent 1.5px 9px);
+--pattern-diagonal-leaf:repeating-linear-gradient(-45deg,var(--leaf-200) 0 1.5px,transparent 1.5px 9px);
+--pattern-diagonal-plum:repeating-linear-gradient(-45deg,var(--plum-200) 0 1.5px,transparent 1.5px 9px);
+--pattern-candy-berry:repeating-linear-gradient(-45deg,var(--berry-500) 0 5px,var(--berry-100) 5px 10px);
+--pattern-candy-leaf:repeating-linear-gradient(-45deg,var(--leaf-500) 0 5px,var(--leaf-100) 5px 10px);
+--pattern-candy-plum:repeating-linear-gradient(-45deg,var(--plum-600) 0 5px,var(--plum-100) 5px 10px);
+/* Plaid — picnic-blanket accents. Use sparingly, like the stripes. */
+--pattern-gingham-berry:repeating-linear-gradient(90deg,rgba(232,67,79,.28) 0 10px,transparent 10px 20px),repeating-linear-gradient(0deg,rgba(232,67,79,.28) 0 10px,transparent 10px 20px),var(--cream-50);
+--pattern-gingham-leaf:repeating-linear-gradient(90deg,rgba(62,142,79,.24) 0 10px,transparent 10px 20px),repeating-linear-gradient(0deg,rgba(62,142,79,.24) 0 10px,transparent 10px 20px),var(--cream-50);
+--pattern-gingham-plum:repeating-linear-gradient(90deg,rgba(105,65,101,.22) 0 10px,transparent 10px 20px),repeating-linear-gradient(0deg,rgba(105,65,101,.22) 0 10px,transparent 10px 20px),var(--cream-50);
+--pattern-plaid-berry:repeating-linear-gradient(90deg,transparent 0 14px,rgba(232,67,79,.22) 14px 26px,transparent 26px 30px,rgba(105,65,101,.35) 30px 32px,transparent 32px 44px),repeating-linear-gradient(0deg,transparent 0 14px,rgba(232,67,79,.22) 14px 26px,transparent 26px 30px,rgba(105,65,101,.35) 30px 32px,transparent 32px 44px),var(--cream-50);
+--pattern-plaid-leaf:repeating-linear-gradient(90deg,transparent 0 14px,rgba(62,142,79,.2) 14px 26px,transparent 26px 30px,rgba(232,67,79,.35) 30px 32px,transparent 32px 44px),repeating-linear-gradient(0deg,transparent 0 14px,rgba(62,142,79,.2) 14px 26px,transparent 26px 30px,rgba(232,67,79,.35) 30px 32px,transparent 32px 44px),var(--cream-50);
+--pattern-plaid-plum:repeating-linear-gradient(90deg,transparent 0 14px,rgba(105,65,101,.2) 14px 26px,transparent 26px 30px,rgba(62,142,79,.35) 30px 32px,transparent 32px 44px),repeating-linear-gradient(0deg,transparent 0 14px,rgba(105,65,101,.2) 14px 26px,transparent 26px 30px,rgba(62,142,79,.35) 30px 32px,transparent 32px 44px),var(--cream-50);
+--overlay-scrim:rgba(61,36,59,.32);
+}

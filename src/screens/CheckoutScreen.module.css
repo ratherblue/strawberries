@@ -1,0 +1,25 @@
+.title { margin-bottom: 24px; }
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 40px; align-items: start; }
+.section { padding: 28px 0; border-top: 1.5px solid var(--border-soft); }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; align-items: start; }
+.full { grid-column: 1 / -1; }
+.triple { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.demo {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 10px 12px;
+  background: var(--sun-50);
+  font-size: 13px; color: var(--sun-700);
+}
+.aside { position: sticky; top: 92px; }
+.note { font-size: 13px; color: var(--text-muted); margin: 12px 0 0; text-align: center; }
+
+@media (max-width: 960px) {
+  .layout { grid-template-columns: 1fr; }
+  .aside { position: static; }
+}
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .spacer { display: none; }
+  .triple { grid-template-columns: 1fr 1fr; }
+  .triple > :first-child { grid-column: 1 / -1; }
+}

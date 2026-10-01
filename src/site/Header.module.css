@@ -1,0 +1,84 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 252, 248, .88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1.5px solid var(--border-soft);
+}
+.bar {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.wordmark {
+  font: 400 26px/1 var(--font-display);
+  color: var(--plum-600);
+  text-decoration: none;
+  letter-spacing: -.02em;
+  white-space: nowrap;
+}
+.wordmark:hover { color: var(--plum-700); }
+.nav { display: flex; gap: 24px; flex: 1; }
+.link {
+  color: var(--ink-700);
+  text-decoration: none;
+  font: 600 15px var(--font-body);
+  padding: 8px 4px;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color var(--dur-fast), border-color var(--dur-fast);
+}
+.link:hover { color: var(--plum-700); border-bottom-color: var(--berry-200); }
+.active, .active:hover { color: var(--plum-700); border-bottom-color: var(--berry-400); }
+.actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.basket { position: relative; }
+.count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 10px;
+  background: var(--berry-500);
+  color: #fff;
+  font: 700 11px/20px var(--font-body);
+  text-align: center;
+  box-shadow: 0 0 0 2px var(--cream-50);
+  pointer-events: none;
+  animation: sb-pop var(--dur-slow) var(--ease-pop);
+}
+.menuBtn { display: none; }
+.mobileNav { display: none; }
+
+@media (max-width: 960px) {
+  .nav { display: none; }
+  .menuBtn { display: inline-grid; }
+  .mobileNav[hidden] { display: none; }
+  .mobileOpen {
+    display: flex;
+    flex-direction: column;
+    padding: 8px var(--gutter) 20px;
+    border-top: 1.5px solid var(--border-soft);
+    animation: sb-fade var(--dur-base) var(--ease-out);
+  }
+  .mobileLink {
+    padding: 14px 0;
+    font: 400 24px/1.1 var(--font-display);
+    color: var(--plum-700);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--border-soft);
+  }
+  .mobileLink:last-child { border-bottom: 0; }
+  .mobileActive { color: var(--berry-600); }
+}
+@media (max-width: 420px) {
+  .bar { gap: 12px; }
+  .wordmark { font-size: 22px; }
+}
