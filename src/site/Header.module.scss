@@ -1,5 +1,7 @@
 @use '../styles/functions' as *;
 
+$bar-height: 68px;
+
 .header {
   position: sticky;
   top: 0;
@@ -13,7 +15,7 @@
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--gutter);
-  height: 68px;
+  height: $bar-height;
   display: flex;
   align-items: center;
   gap: 32px;
@@ -69,6 +71,13 @@
     padding: 8px var(--gutter) 20px;
     border-top: 1.5px solid var(--border-soft);
     animation: sb-fade var(--dur-base) var(--ease-out);
+    // The header is sticky, so the page can't scroll the menu into view on short
+    // screens (e.g. a phone in landscape). Cap it below the bar (minus the header's bottom border) and let it scroll itself.
+    max-height: calc(100vh - #{$bar-height} - 1.5px);
+    max-height: calc(100dvh - #{$bar-height} - 1.5px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    box-sizing: border-box;
   }
   .mobile-link {
     padding: 14px 0;
