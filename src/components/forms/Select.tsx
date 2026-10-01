@@ -25,7 +25,7 @@ export function Select({ label, hint, error, options, placeholder, id, size = 'm
       <div className="sb-select-wrap">
         <select
           id={fid}
-          className={cx('sb-input', 'sb-select', 'sb-input--' + size, error && 'sb-input--error')}
+          className={cx('sb-input', 'sb-select', size, error && 'error')}
           aria-invalid={error ? true : undefined}
           aria-describedby={msg ? hintId : undefined}
           {...extra}
@@ -40,7 +40,7 @@ export function Select({ label, hint, error, options, placeholder, id, size = 'm
         </select>
         <Icon name="chevron-down" size={16} className="sb-select-chev" />
       </div>
-      {msg ? <span id={hintId} className={cx('sb-hint', error && 'sb-hint--error')}>{msg}</span> : null}
+      {msg ? <span id={hintId} className={cx('sb-hint', error && 'error')}>{msg}</span> : null}
     </div>
   );
 }

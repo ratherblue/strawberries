@@ -17,7 +17,7 @@ export function IconButton({ icon, label, variant = 'outline', size = 'md', clas
       type="button"
       aria-label={label}
       title={label}
-      className={cx('sb-iconbtn', 'sb-iconbtn--' + variant, 'sb-iconbtn--' + size, className)}
+      className={cx('sb-iconbtn', variant, size, className)}
       {...rest}
     >
       <Icon name={icon} size={px} />

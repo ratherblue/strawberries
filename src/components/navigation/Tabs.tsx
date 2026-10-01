@@ -18,7 +18,7 @@ export function Tabs<T extends string = string>({ items, value, defaultValue, on
   const [inner, setInner] = useState<T | undefined>(defaultValue ?? items[0]?.id);
   const cur = value ?? inner;
   return (
-    <div role="tablist" aria-label={rest['aria-label']} className={cx('sb-tabs', 'sb-tabs--' + variant, className)}>
+    <div role="tablist" aria-label={rest['aria-label']} className={cx('sb-tabs', variant, className)}>
       {items.map((it) => (
         <button
           key={it.id}
@@ -29,7 +29,7 @@ export function Tabs<T extends string = string>({ items, value, defaultValue, on
           onClick={() => { setInner(it.id); onChange?.(it.id); }}
         >
           {it.label}
-          {it.count != null ? <span className="sb-tab__count">{it.count}</span> : null}
+          {it.count != null ? <span className="sb-tab-count">{it.count}</span> : null}
         </button>
       ))}
     </div>

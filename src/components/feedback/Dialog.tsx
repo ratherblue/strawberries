@@ -30,7 +30,7 @@ export function Dialog({ open, onClose, title, children, actions, stripes = 'ber
   if (!open) return null;
   return (
     <div
-      className={cx('sb-dialog-overlay', inline && 'sb-dialog-overlay--inline')}
+      className={cx('sb-dialog-overlay', inline && 'inline')}
       onMouseDown={(e) => { if (e.target === e.currentTarget) onClose?.(); }}
     >
       <div
@@ -42,13 +42,13 @@ export function Dialog({ open, onClose, title, children, actions, stripes = 'ber
         className="sb-dialog"
         style={{ maxWidth: width, outline: 'none' }}
       >
-        {stripes ? <div className={'sb-dialog__stripes sb-pattern--' + stripes} /> : null}
-        <div className="sb-dialog__head">
-          <h2 className="sb-dialog__title">{title}</h2>
+        {stripes ? <div className={'sb-dialog-stripes sb-pattern ' + stripes} /> : null}
+        <div className="sb-dialog-head">
+          <h2 className="sb-dialog-title">{title}</h2>
           {onClose ? <IconButton icon="x" label="Close" variant="ghost" size="sm" onClick={onClose} /> : null}
         </div>
-        <div className="sb-dialog__body">{children}</div>
-        {actions ? <div className="sb-dialog__actions">{actions}</div> : null}
+        <div className="sb-dialog-body">{children}</div>
+        {actions ? <div className="sb-dialog-actions">{actions}</div> : null}
       </div>
     </div>
   );

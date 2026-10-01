@@ -23,7 +23,7 @@ export function Input({ label, hint, error, id, multiline = false, size = 'md', 
   const fid = id ?? auto;
   const hintId = fid + '-hint';
   const msg = error || hint;
-  const cls = cx('sb-input', 'sb-input--' + size, multiline && 'sb-input--multi', error && 'sb-input--error');
+  const cls = cx('sb-input', size, multiline && 'multi', error && 'error');
   const shared = {
     id: fid,
     className: cls,
@@ -36,7 +36,7 @@ export function Input({ label, hint, error, id, multiline = false, size = 'md', 
       {multiline
         ? <textarea {...shared} {...(rest as TextareaHTMLAttributes<HTMLTextAreaElement>)} />
         : <input {...shared} {...(rest as InputHTMLAttributes<HTMLInputElement>)} />}
-      {msg ? <span id={hintId} className={cx('sb-hint', error && 'sb-hint--error')}>{msg}</span> : null}
+      {msg ? <span id={hintId} className={cx('sb-hint', error && 'error')}>{msg}</span> : null}
     </div>
   );
 }

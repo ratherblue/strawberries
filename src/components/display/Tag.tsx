@@ -26,7 +26,7 @@ export function Tag({ selected = false, icon, onRemove, onClick, disabled, class
           role="button"
           tabIndex={0}
           aria-label="Remove"
-          className="sb-tag__x"
+          className="sb-tag-x"
           onClick={(e) => { e.stopPropagation(); onRemove(); }}
           onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onRemove(); } }}
         >

@@ -10,7 +10,7 @@ button { font: inherit; }
 
 /* lucide-react renders real SVGs, so switch off the CSS-mask approach the prototype used. */
 svg.sb-icon { background: none; -webkit-mask: none; mask: none; }
-.sb-btn--block { width: 100%; }
+.sb-btn.block { width: 100%; }
 .sb-iconbtn:disabled:hover { transform: none; }
 .sb-tag:disabled { cursor: not-allowed; opacity: .45; }
 
@@ -32,7 +32,7 @@ svg.sb-icon { background: none; -webkit-mask: none; mask: none; }
 .skip-link:focus { top: 12px; color: #fff; }
 
 a:focus-visible { outline: 1.5px solid var(--plum-400); outline-offset: 2px; }
-.sb-card--interactive:focus-visible { outline: none; transform: translate(-3px,-3px); box-shadow: var(--shadow-sticker), var(--ring); }
+.sb-card.interactive:focus-visible { outline: none; transform: translate(-3px,-3px); box-shadow: var(--shadow-sticker), var(--ring); }
 
 .visually-hidden {
   position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;

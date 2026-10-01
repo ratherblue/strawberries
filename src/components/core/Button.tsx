@@ -28,7 +28,7 @@ export type ButtonProps = AsButton | AsRouterLink | AsAnchor;
 
 export function Button(props: ButtonProps) {
   const { variant = 'primary', size = 'md', icon, iconRight, block, className, children, ...rest } = props;
-  const cls = cx('sb-btn', 'sb-btn--' + variant, 'sb-btn--' + size, block && 'sb-btn--block', className);
+  const cls = cx('sb-btn', variant, size, block && 'block', className);
   const s = size === 'sm' ? 16 : size === 'lg' ? 20 : 18;
   const inner = (
     <>

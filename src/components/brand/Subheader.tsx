@@ -19,7 +19,7 @@ export function Subheader({ as, size = 'md', variant = 'heading', tilt = -12, be
   const El = as ?? (variant === 'eyebrow' ? 'p' : 'h3');
   const bs = variant === 'eyebrow' ? 16 : { sm: 18, md: 24, lg: 30 }[size];
   return (
-    <El className={cx('sb-subheader', 'sb-subheader--' + variant, 'sb-subheader--' + size, className)} {...rest}>
+    <El className={cx('sb-subheader', variant, size, className)} {...rest}>
       {berry ? <Strawberry size={bs} tilt={tilt} /> : null}
       <span>{children}</span>
     </El>

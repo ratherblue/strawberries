@@ -11,9 +11,9 @@ export interface TooltipProps {
 
 export function Tooltip({ label, placement = 'top', open = false, children }: TooltipProps) {
   return (
-    <span className={cx('sb-tip', 'sb-tip--' + placement, open && 'sb-tip--open')}>
+    <span className={cx('sb-tip', placement, open && 'open')}>
       {children}
-      <span role="tooltip" className="sb-tip__bubble">{label}</span>
+      <span role="tooltip" className="sb-tip-bubble">{label}</span>
     </span>
   );
 }

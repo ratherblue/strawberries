@@ -38,13 +38,13 @@ export function Card({ variant = 'default', interactive = false, stripes, paddin
     : { onKeyDown };
   return (
     <div
-      className={cx('sb-card', 'sb-card--' + variant, interactive && 'sb-card--interactive', className)}
+      className={cx('sb-card', variant, interactive && 'interactive', className)}
       onClick={onClick}
       {...keyProps}
       {...rest}
     >
-      {stripes ? <div className={'sb-card__stripes sb-pattern--' + stripes} /> : null}
-      <div className="sb-card__body" style={{ padding }}>{children}</div>
+      {stripes ? <div className={'sb-card-stripes sb-pattern ' + stripes} /> : null}
+      <div className="sb-card-body" style={{ padding }}>{children}</div>
     </div>
   );
 }

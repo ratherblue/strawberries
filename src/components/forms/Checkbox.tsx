@@ -10,7 +10,7 @@ export function Checkbox({ label, className, ...rest }: CheckboxProps) {
   return (
     <label className={cx('sb-check', className)}>
       <input type="checkbox" {...rest} />
-      <span className="sb-check__box"><Icon name="check" size={14} /></span>
+      <span className="sb-check-box"><Icon name="check" size={14} /></span>
       {label ? <span>{label}</span> : null}
     </label>
   );

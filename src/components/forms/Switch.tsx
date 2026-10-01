@@ -9,7 +9,7 @@ export function Switch({ label, className, ...rest }: SwitchProps) {
   return (
     <label className={cx('sb-switch', className)}>
       <input type="checkbox" role="switch" {...rest} />
-      <span className="sb-switch__track"><span className="sb-switch__thumb" /></span>
+      <span className="sb-switch-track"><span className="sb-switch-thumb" /></span>
       {label ? <span>{label}</span> : null}
     </label>
   );

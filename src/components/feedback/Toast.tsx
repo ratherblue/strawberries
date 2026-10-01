@@ -21,15 +21,15 @@ export function Toast({ tone = 'default', title, children, action, onAction, onC
       ? <Icon name="triangle-alert" size={18} />
       : <Strawberry size={22} tilt={-10} />;
   return (
-    <div role="status" className={cx('sb-toast', 'sb-toast--' + tone, className)}>
-      <span className="sb-toast__lead">{lead}</span>
-      <div className="sb-toast__body">
+    <div role="status" className={cx('sb-toast', tone, className)}>
+      <span className="sb-toast-lead">{lead}</span>
+      <div className="sb-toast-body">
         {title ? <strong>{title}</strong> : null}
         {children ? <span>{children}</span> : null}
       </div>
-      {action ? <button type="button" className="sb-toast__action" onClick={onAction}>{action}</button> : null}
+      {action ? <button type="button" className="sb-toast-action" onClick={onAction}>{action}</button> : null}
       {onClose ? (
-        <button type="button" className="sb-toast__close" aria-label="Dismiss" onClick={onClose}>
+        <button type="button" className="sb-toast-close" aria-label="Dismiss" onClick={onClose}>
           <Icon name="x" size={16} />
         </button>
       ) : null}
