@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { IconButton } from '../components'
 import { useStore } from '../state/store'
-import { cx } from '../lib/cx'
+import clsx from 'clsx'
 import { NAV } from './nav'
 import s from './Header.module.scss'
 
@@ -31,7 +31,7 @@ export function Header() {
 
   return (
     <header className={s.header}>
-      <div className={cx('container', s.bar)}>
+      <div className={clsx('container', s.bar)}>
         <Link to="/" className={s.wordmark}>
           Strawberries
         </Link>
@@ -41,7 +41,7 @@ export function Header() {
               key={n.to}
               to={n.to}
               end={n.to === '/'}
-              className={({ isActive }) => cx(s.link, isActive && s.active)}
+              className={({ isActive }) => clsx(s.link, isActive && s.active)}
             >
               {n.label}
             </NavLink>
@@ -80,7 +80,7 @@ export function Header() {
       </div>
       <nav
         id="mobile-nav"
-        className={cx(s.mobileNav, open && s.mobileOpen)}
+        className={clsx(s.mobileNav, open && s.mobileOpen)}
         aria-label="Main"
         hidden={!open}
       >
@@ -89,7 +89,7 @@ export function Header() {
             key={n.to}
             to={n.to}
             end={n.to === '/'}
-            className={({ isActive }) => cx(s.mobileLink, isActive && s.mobileActive)}
+            className={({ isActive }) => clsx(s.mobileLink, isActive && s.mobileActive)}
           >
             {n.label}
           </NavLink>

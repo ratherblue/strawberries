@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from 'react'
-import { cx } from '../../lib/cx'
+import clsx from 'clsx'
 
 export interface TabItem<T extends string = string> {
   id: T
@@ -33,7 +33,7 @@ export function Tabs<T extends string = string>({
     <div
       role="tablist"
       aria-label={rest['aria-label']}
-      className={cx('sb-tabs', variant, className)}
+      className={clsx('sb-tabs', variant, className)}
     >
       {items.map((it) => (
         <button
@@ -41,7 +41,7 @@ export function Tabs<T extends string = string>({
           type="button"
           role="tab"
           aria-selected={cur === it.id}
-          className={cx('sb-tab', cur === it.id && 'is-active')}
+          className={clsx('sb-tab', cur === it.id && 'is-active')}
           onClick={() => {
             setInner(it.id)
             onChange?.(it.id)

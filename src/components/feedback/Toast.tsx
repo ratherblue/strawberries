@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { Icon } from '../core/Icon'
 import { Strawberry } from '../brand/Strawberry'
-import { cx } from '../../lib/cx'
+import clsx from 'clsx'
 
 export interface ToastProps {
   /** default = plum w/ strawberry, success = leaf, danger = berry */
@@ -32,7 +32,7 @@ export function Toast({
       <Strawberry size={22} tilt={-10} />
     )
   return (
-    <div role="status" className={cx('sb-toast', tone, className)}>
+    <div role="status" className={clsx('sb-toast', tone, className)}>
       <span className="sb-toast-lead">{lead}</span>
       <div className="sb-toast-body">
         {title ? <strong>{title}</strong> : null}

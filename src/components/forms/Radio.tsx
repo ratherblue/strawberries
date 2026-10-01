@@ -1,5 +1,5 @@
 import type { InputHTMLAttributes, ReactNode } from 'react'
-import { cx } from '../../lib/cx'
+import clsx from 'clsx'
 
 export interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
   label?: ReactNode
@@ -7,7 +7,7 @@ export interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
 
 export function Radio({ label, className, ...rest }: RadioProps) {
   return (
-    <label className={cx('sb-check', className)}>
+    <label className={clsx('sb-check', className)}>
       <input type="radio" {...rest} />
       <span className="sb-check-box radio">
         <span className="sb-radio-dot" />

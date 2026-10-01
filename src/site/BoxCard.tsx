@@ -2,7 +2,7 @@ import { Badge, Button, Card, IconButton } from '../components'
 import type { Product } from '../data/products'
 import { money } from '../lib/money'
 import { useStore } from '../state/store'
-import { cx } from '../lib/cx'
+import clsx from 'clsx'
 import { Photo } from './Photo'
 import s from './BoxCard.module.scss'
 
@@ -24,7 +24,7 @@ export function BoxCard({ box }: { box: Product }) {
           label={fav ? `Remove ${box.name} from favourites` : `Save ${box.name}`}
           size="sm"
           aria-pressed={fav}
-          className={cx(s.heart, fav && s.faved)}
+          className={clsx(s.heart, fav && s.faved)}
           onClick={(e) => {
             e.stopPropagation()
             toggleFavorite(box.id)

@@ -1,5 +1,5 @@
 import type { HTMLAttributes, KeyboardEvent } from 'react'
-import { cx } from '../../lib/cx'
+import clsx from 'clsx'
 
 export type CardStripes =
   | 'berry'
@@ -58,7 +58,7 @@ export function Card({
       : { onKeyDown }
   return (
     <div
-      className={cx('sb-card', variant, interactive && 'interactive', className)}
+      className={clsx('sb-card', variant, interactive && 'interactive', className)}
       onClick={onClick}
       {...keyProps}
       {...rest}

@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Strawberry, Stripes } from '../components'
-import { cx } from '../lib/cx'
+import clsx from 'clsx'
 import s from './Footer.module.scss'
 
 const COLUMNS = [
@@ -37,7 +37,7 @@ export function Footer() {
   return (
     <footer className={s.footer}>
       <Stripes variant="gingham" tone="berry" height={20} style={{ borderRadius: 0 }} />
-      <div className={cx('container', s.grid)}>
+      <div className={clsx('container', s.grid)}>
         <div>
           <div className={s.brand}>
             <Strawberry size={28} tilt={-12} />
@@ -97,7 +97,7 @@ export function Footer() {
           </div>
         ))}
       </div>
-      <div className={cx('container', s.legal)}>
+      <div className={clsx('container', s.legal)}>
         <span>© {new Date().getFullYear()} Strawberries Farm · Hood River, OR</span>
         <span>A portfolio project. The berries are imaginary; the design is real.</span>
       </div>

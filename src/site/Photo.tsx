@@ -1,6 +1,6 @@
 import type { CSSProperties, ReactNode } from 'react'
 import type { Tone } from '../data/products'
-import { cx } from '../lib/cx'
+import clsx from 'clsx'
 import s from './Photo.module.scss'
 
 interface PhotoProps {
@@ -29,7 +29,7 @@ export function Photo({
   } as CSSProperties
   return (
     <div
-      className={cx(s.photo, s[tone], className)}
+      className={clsx(s.photo, s[tone], className)}
       style={style}
       role="img"
       aria-label={label ? 'Photo: ' + label : undefined}

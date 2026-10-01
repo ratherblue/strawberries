@@ -1,7 +1,7 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { Icon, type IconName } from './Icon'
-import { cx } from '../../lib/cx'
+import clsx from 'clsx'
 
 // primary... or prime...berry, am I right? ha ha ha
 type Variant = 'primary' | 'berry' | 'secondary' | 'ghost'
@@ -41,7 +41,7 @@ export function Button(props: ButtonProps) {
     children,
     ...rest
   } = props
-  const cls = cx('sb-btn', variant, size, block && 'block', className)
+  const cls = clsx('sb-btn', variant, size, block && 'block', className)
   const s = size === 'sm' ? 16 : size === 'lg' ? 20 : 18
   const inner = (
     <>

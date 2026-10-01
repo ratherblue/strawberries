@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'react'
-import { cx } from '../../lib/cx'
+import clsx from 'clsx'
 
 export type BadgeTone = 'berry' | 'leaf' | 'plum' | 'sun' | 'neutral' | 'solid'
 
@@ -11,7 +11,7 @@ export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
 
 export function Badge({ tone = 'berry', dot = false, className, children, ...rest }: BadgeProps) {
   return (
-    <span className={cx('sb-badge', tone, className)} {...rest}>
+    <span className={clsx('sb-badge', tone, className)} {...rest}>
       {dot ? <span className="sb-badge-dot" /> : null}
       {children}
     </span>

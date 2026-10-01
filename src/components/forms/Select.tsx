@@ -1,6 +1,6 @@
 import { useId, type SelectHTMLAttributes } from 'react'
 import { Icon } from '../core/Icon'
-import { cx } from '../../lib/cx'
+import clsx from 'clsx'
 
 export interface SelectOption {
   value: string
@@ -36,7 +36,7 @@ export function Select({
       ? { defaultValue: '' }
       : {}
   return (
-    <div className={cx('sb-field', className)}>
+    <div className={clsx('sb-field', className)}>
       {label ? (
         <label className="sb-label" htmlFor={fid}>
           {label}
@@ -45,7 +45,7 @@ export function Select({
       <div className="sb-select-wrap">
         <select
           id={fid}
-          className={cx('sb-input', 'sb-select', size, error && 'error')}
+          className={clsx('sb-input', 'sb-select', size, error && 'error')}
           aria-invalid={error ? true : undefined}
           aria-describedby={msg ? hintId : undefined}
           {...extra}
@@ -69,7 +69,7 @@ export function Select({
         <Icon name="chevron-down" size={16} className="sb-select-chev" />
       </div>
       {msg ? (
-        <span id={hintId} className={cx('sb-hint', error && 'error')}>
+        <span id={hintId} className={clsx('sb-hint', error && 'error')}>
           {msg}
         </span>
       ) : null}

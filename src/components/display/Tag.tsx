@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { Icon, type IconName } from '../core/Icon'
-import { cx } from '../../lib/cx'
+import clsx from 'clsx'
 
 export interface TagProps {
   /** Filled plum when selected */
@@ -24,7 +24,7 @@ export function Tag({
   className,
   children,
 }: TagProps) {
-  const cls = cx(
+  const cls = clsx(
     'sb-tag',
     selected && 'is-selected',
     onClick && !disabled && 'is-clickable',

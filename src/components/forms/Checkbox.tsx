@@ -1,6 +1,6 @@
 import type { InputHTMLAttributes, ReactNode } from 'react'
 import { Icon } from '../core/Icon'
-import { cx } from '../../lib/cx'
+import clsx from 'clsx'
 
 export interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
   label?: ReactNode
@@ -8,7 +8,7 @@ export interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement
 
 export function Checkbox({ label, className, ...rest }: CheckboxProps) {
   return (
-    <label className={cx('sb-check', className)}>
+    <label className={clsx('sb-check', className)}>
       <input type="checkbox" {...rest} />
       <span className="sb-check-box">
         <Icon name="check" size={14} />

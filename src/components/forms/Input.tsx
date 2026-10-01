@@ -1,5 +1,5 @@
 import { useId, type InputHTMLAttributes, type TextareaHTMLAttributes } from 'react'
-import { cx } from '../../lib/cx'
+import clsx from 'clsx'
 
 type Size = 'sm' | 'md' | 'lg'
 
@@ -32,7 +32,7 @@ export function Input({
   const fid = id ?? auto
   const hintId = fid + '-hint'
   const msg = error || hint
-  const cls = cx('sb-input', size, multiline && 'multi', error && 'error')
+  const cls = clsx('sb-input', size, multiline && 'multi', error && 'error')
   const shared = {
     id: fid,
     className: cls,
@@ -40,7 +40,7 @@ export function Input({
     'aria-describedby': msg ? hintId : undefined,
   }
   return (
-    <div className={cx('sb-field', className)}>
+    <div className={clsx('sb-field', className)}>
       {label ? (
         <label className="sb-label" htmlFor={fid}>
           {label}
@@ -52,7 +52,7 @@ export function Input({
         <input {...shared} {...(rest as InputHTMLAttributes<HTMLInputElement>)} />
       )}
       {msg ? (
-        <span id={hintId} className={cx('sb-hint', error && 'error')}>
+        <span id={hintId} className={clsx('sb-hint', error && 'error')}>
           {msg}
         </span>
       ) : null}

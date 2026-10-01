@@ -5,7 +5,7 @@ import { useStore } from '../state/store'
 import { OrderSummary } from '../site/OrderSummary'
 import { Photo } from '../site/Photo'
 import { usePageTitle } from '../lib/usePageTitle'
-import { cx } from '../lib/cx'
+import clsx from 'clsx'
 import s from './CartScreen.module.scss'
 
 const FREQS: Array<[Frequency, string, string]> = [
@@ -15,7 +15,7 @@ const FREQS: Array<[Frequency, string, string]> = [
 
 export function EmptyBasket() {
   return (
-    <div className={cx('container', s.empty)}>
+    <div className={clsx('container', s.empty)}>
       <Strawberry size={64} tilt={-12} className={s.emptyBerry} />
       <h1 className={s.emptyTitle}>Your basket's empty</h1>
       <p className={s.emptyCopy}>
@@ -82,7 +82,7 @@ export function CartScreen() {
             </legend>
             <div className={s.options}>
               {FREQS.map(([v, t, d]) => (
-                <label key={v} className={cx(s.option, frequency === v && s.optionOn)}>
+                <label key={v} className={clsx(s.option, frequency === v && s.optionOn)}>
                   <div className={s.optionHead}>
                     <Radio
                       name="freq"

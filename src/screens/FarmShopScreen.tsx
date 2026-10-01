@@ -3,7 +3,7 @@ import { Badge, Button, Card, Subheader } from '../components'
 import type { Tone } from '../data/products'
 import { Photo } from '../site/Photo'
 import { usePageTitle } from '../lib/usePageTitle'
-import { cx } from '../lib/cx'
+import clsx from 'clsx'
 import s from './FarmShopScreen.module.scss'
 
 const HOURS = [
@@ -52,7 +52,7 @@ export function FarmShopScreen() {
           </Subheader>
           <dl className={s.hours}>
             {HOURS.map(([d, h]) => (
-              <div key={d} className={cx(s.hourRow, d === TODAY && s.today)}>
+              <div key={d} className={clsx(s.hourRow, d === TODAY && s.today)}>
                 <dt className={s.day}>
                   {d}
                   {d === TODAY ? (
@@ -61,7 +61,7 @@ export function FarmShopScreen() {
                     </Badge>
                   ) : null}
                 </dt>
-                <dd className={cx(s.time, h === 'Closed' && s.closed)}>{h}</dd>
+                <dd className={clsx(s.time, h === 'Closed' && s.closed)}>{h}</dd>
               </div>
             ))}
           </dl>

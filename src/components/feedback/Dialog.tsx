@@ -1,7 +1,7 @@
 import { useEffect, useRef, type ReactNode } from 'react'
 import { IconButton } from '../core/IconButton'
 import type { CardStripes } from '../display/Card'
-import { cx } from '../../lib/cx'
+import clsx from 'clsx'
 
 export interface DialogProps {
   open: boolean
@@ -44,7 +44,7 @@ export function Dialog({
   if (!open) return null
   return (
     <div
-      className={cx('sb-dialog-overlay', inline && 'inline')}
+      className={clsx('sb-dialog-overlay', inline && 'inline')}
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) onClose?.()
       }}

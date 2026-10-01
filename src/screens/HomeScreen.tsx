@@ -4,7 +4,7 @@ import { PRODUCTS } from '../data/products'
 import { BoxCard } from '../site/BoxCard'
 import { Photo } from '../site/Photo'
 import { usePageTitle } from '../lib/usePageTitle'
-import { cx } from '../lib/cx'
+import clsx from 'clsx'
 import s from './HomeScreen.module.scss'
 
 const STEPS = [
@@ -15,7 +15,7 @@ const STEPS = [
 
 function Hero() {
   return (
-    <section className={cx('container', s.hero)}>
+    <section className={clsx('container', s.hero)}>
       <div>
         <Subheader variant="eyebrow">Picked at dawn · on your doorstep by tea</Subheader>
         <h1 className={s.heroTitle}>Sun-warm strawberries, straight from the field.</h1>
@@ -58,7 +58,7 @@ export function HomeScreen() {
         <Stripes variant="candy" className={s.candy} />
       </div>
 
-      <section className={cx('container', s.fresh)} aria-labelledby="fresh-heading">
+      <section className={clsx('container', s.fresh)} aria-labelledby="fresh-heading">
         <div className={s.freshHead}>
           <div>
             <Subheader size="lg" as="h2" id="fresh-heading">
@@ -78,7 +78,7 @@ export function HomeScreen() {
       </section>
 
       <section className={s.how} aria-labelledby="how-heading">
-        <div className={cx('container', s.howInner)}>
+        <div className={clsx('container', s.howInner)}>
           <div>
             <Subheader size="lg" as="h2" id="how-heading">
               How it works

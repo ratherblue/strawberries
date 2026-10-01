@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes } from 'react'
 import { Icon, type IconName } from './Icon'
-import { cx } from '../../lib/cx'
+import clsx from 'clsx'
 
 export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon: IconName
@@ -24,7 +24,7 @@ export function IconButton({
       type="button"
       aria-label={label}
       title={label}
-      className={cx('sb-iconbtn', variant, size, className)}
+      className={clsx('sb-iconbtn', variant, size, className)}
       {...rest}
     >
       <Icon name={icon} size={px} />

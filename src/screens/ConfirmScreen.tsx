@@ -3,7 +3,7 @@ import { Button, Card, Strawberry } from '../components'
 import { useStore } from '../state/store'
 import { formatLongDate } from '../lib/dates'
 import { usePageTitle } from '../lib/usePageTitle'
-import { cx } from '../lib/cx'
+import clsx from 'clsx'
 import s from './ConfirmScreen.module.scss'
 
 export function ConfirmScreen() {
@@ -13,7 +13,7 @@ export function ConfirmScreen() {
 
   if (!order || order.id !== id) {
     return (
-      <div className={cx('container', s.wrap)}>
+      <div className={clsx('container', s.wrap)}>
         <Strawberry size={72} tilt={-12} className={s.berry} />
         <h1 className={s.title}>We can't find that order.</h1>
         <p className={s.copy}>
@@ -29,7 +29,7 @@ export function ConfirmScreen() {
     [order.name, order.address, order.apt, order.city].filter(Boolean).join(', ') +
     `, ${order.state} ${order.zip}`
   return (
-    <div className={cx('container', s.wrap)}>
+    <div className={clsx('container', s.wrap)}>
       <Strawberry size={72} tilt={-12} className={s.berry} />
       <h1 className={s.title}>Lovely — it's on its way.</h1>
       <p className={s.copy}>

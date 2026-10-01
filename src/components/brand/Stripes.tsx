@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'react'
-import { cx } from '../../lib/cx'
+import clsx from 'clsx'
 
 export interface StripesProps extends HTMLAttributes<HTMLDivElement> {
   tone?: 'berry' | 'leaf' | 'plum'
@@ -21,7 +21,7 @@ export function Stripes({
   return (
     <div
       aria-hidden="true"
-      className={cx('sb-stripes', variant, 'sb-pattern', pat, className)}
+      className={clsx('sb-stripes', variant, 'sb-pattern', pat, className)}
       style={{ height: h, ...style }}
       {...rest}
     />

@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactNode } from 'react'
 import { Strawberry } from './Strawberry'
-import { cx } from '../../lib/cx'
+import clsx from 'clsx'
 
 export interface SubheaderProps extends HTMLAttributes<HTMLElement> {
   /** Element to render. Default h3 (heading) / p (eyebrow) */
@@ -28,7 +28,7 @@ export function Subheader({
   const El = as ?? (variant === 'eyebrow' ? 'p' : 'h3')
   const bs = variant === 'eyebrow' ? 16 : { sm: 18, md: 24, lg: 30 }[size]
   return (
-    <El className={cx('sb-subheader', variant, size, className)} {...rest}>
+    <El className={clsx('sb-subheader', variant, size, className)} {...rest}>
       {berry ? <Strawberry size={bs} tilt={tilt} /> : null}
       <span>{children}</span>
     </El>

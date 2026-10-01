@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { Card } from '../components'
 import { FREE_DELIVERY_AT, money, totals, type Frequency, type Line } from '../lib/money'
-import { cx } from '../lib/cx'
+import clsx from 'clsx'
 import s from './OrderSummary.module.scss'
 
 interface Props {
@@ -36,7 +36,7 @@ export function OrderSummary({ lines, freq, compact = false, children }: Props) 
           <dd>{money(t.subtotal)}</dd>
         </div>
         {t.discount ? (
-          <div className={cx(s.row, s.saving)}>
+          <div className={clsx(s.row, s.saving)}>
             <dt>Weekly saving (10%)</dt>
             <dd>−{money(t.discount)}</dd>
           </div>
@@ -50,7 +50,7 @@ export function OrderSummary({ lines, freq, compact = false, children }: Props) 
         <div className={s.nudge}>Add {money(toFree)} more for free delivery.</div>
       ) : null}
       <div className={s.totalWrap}>
-        <div className={cx(s.row, s.total)}>
+        <div className={clsx(s.row, s.total)}>
           <span>Total</span>
           <span>{money(t.total)}</span>
         </div>
