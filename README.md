@@ -8,7 +8,11 @@ A marketing site and shop for **Strawberries**, a small (imaginary) farm that sh
 
 - **Vite + React 18 + TypeScript** (strict)
 - **React Router 6** for routes: `/`, `/shop`, `/field`, `/pick`, `/farm-shop`, `/basket`, `/checkout`, `/order/:id`
-- **Plain CSS + CSS Modules**: the design tokens (`src/styles/*.css`) are copied in as-is from the handoff, and page layout lives in co-located `.module.css` files
+- **SCSS + CSS Modules**:
+  - Design tokens are CSS custom properties in `src/styles/tokens/`.
+  - Component styles are nested partials in `src/styles/components/`.
+  - Page layout lives in co-located `.module.scss` files.
+  - Font sizes are in `rem`, written as `rem(14px)` via `src/styles/_functions.scss`, so text scales with the visitor's browser setting.
 - **lucide-react** icons at 2px stroke
 
 ## Getting started
@@ -32,7 +36,7 @@ src/
   state/        Basket / frequency / favourites / toast / last order (React context)
   data/         Product catalogue
   lib/          Money + totals, local-date helpers, safe storage
-  styles/       Tokens, component styles (sb-*), app globals
+  styles/       Tokens, component partials (sb-*), base + app globals (SCSS)
 ```
 
 ## Details worth a look

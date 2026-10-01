@@ -4,16 +4,16 @@
   --font-display: 'Libre Caslon Text',Georgia,'Times New Roman',serif;
   --font-body: 'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
   --font-mono: 'DM Mono',ui-monospace,Menlo,monospace;
-  --fs-xs: rem(12px);
-  --fs-sm: rem(14px);
-  --fs-base: rem(16px);
-  --fs-md: rem(18px);
-  --fs-lg: rem(22px);
-  --fs-xl: rem(28px);
-  --fs-2xl: rem(36px);
-  --fs-3xl: rem(48px);
-  --fs-4xl: rem(64px);
-  --fs-5xl: rem(84px);
+  --fs-xs: #{rem(12px)};
+  --fs-sm: #{rem(14px)};
+  --fs-base: #{rem(16px)};
+  --fs-md: #{rem(18px)};
+  --fs-lg: #{rem(22px)};
+  --fs-xl: #{rem(28px)};
+  --fs-2xl: #{rem(36px)};
+  --fs-3xl: #{rem(48px)};
+  --fs-4xl: #{rem(64px)};
+  --fs-5xl: #{rem(84px)};
   --lh-tight: 1.06; /* @kind font */
   --lh-snug: 1.2; /* @kind font */
   --lh-normal: 1.4; /* @kind font */
